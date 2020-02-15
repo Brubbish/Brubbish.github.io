@@ -20,6 +20,8 @@ ga('send', 'pageview');
 
     <meta charset="utf-8">
     
+    <meta name="google-site-verification" content="true">
+    
     
     
     
@@ -34,7 +36,7 @@ ga('send', 'pageview');
 <meta property="og:title" content="Brubbish&#39;s">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Bruce">
 <meta name="twitter:card" content="summary">
     
@@ -44,9 +46,6 @@ ga('send', 'pageview');
 
     <!-- custom head -->
     
-
-
-<script data-ad-client="ca-pub-9943095847270020" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -94,13 +93,6 @@ ga('send', 'pageview');
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
               <a href="https://github.com/brubbish" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
@@ -124,7 +116,7 @@ ga('send', 'pageview');
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -180,12 +172,16 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        offset功能是取得标号的偏移地址
+        汇编学习offset功能是取得标号的偏移地址
+12345678assume cs:codesgcodesg segment    start:mov ax,offset start    &lt;!-- 相当于mov ax,0 --&gt;    s:mov ax,offstet s    &lt;!-- 相当于mov ax,3 --&gt;codesg endsend start
 
+offset取得了标号start和s的偏移地址：0和3
+jmp依据位移进行转移的jmp指令1.jmp short 标号实现段内短转移，对ip修改范围为：-128~127字节例：
+123456....star...
     
 
         <a href="/2020/02/16/2020-02-16-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -232,11 +228,13 @@ ga('send', 'pageview');
 了解了GitHub上博客的结构使用 GitHub, Jekyll 打造自己的免费独立博客
 
 2.汇编语言学习div指令
-div是...
+div是除法指令
+除数：有8位和16位两种，在一个寄存器或内存单元中
+被除数：默认放在ax或dx和ax中如果除数为8位，则被除数为16位，默认放在ax中存放如果除数为16位，则被除数位32位，在dx和ax中存...
     
 
         <a href="/2020/02/09/2020-02-09-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -279,11 +277,12 @@ div是...
     
         1.用github搞了博客参考：https://www.fast.ai/2020/01/16/fast_template/并用了他的模板….页面还没改完
 2.汇编语言学习[BX]和loop指令一次执行完循环的过程：g指令：“g 0012”从当前的cs：ip指向的指令执行，一直到（ip）=0012为止p指令：直到（cx）=0为止
-段前缀：在访问内存单元的指令中显式低给出内存单元段地址所在的段寄...
+段前缀：在访问内存单元的指令中显式低给出内存单元段地址所在的段寄存器，如：mov ax,ds:[bx]mov ax,cs:[bx]mov ax,ss,[bx]mov ax,ex,[0]….
+在代码段中使用数据code segment“dw 0123，0456”…....
     
 
         <a href="/2020/02/02/2020-02-02-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -326,11 +325,11 @@ div是...
     
         1.scanf、getchar、getch、getche和缓冲区https://cloud.tencent.com/developer/article/1354983https://www.cnblogs.com/lanhaicode/p/10575049.html
 
-读取字符时：(1)scanf()以 Enter 结束一次输入，不会舍弃最后的回车符（即回车符会残留在缓冲区中）；(2)get...
+读取字符时：(1)scanf()以 Enter 结束一次输入，不会舍弃最后的回车符（即回车符会残留在缓冲区中）；(2)getchar()以 Enter 结束输入，不会舍弃最后的回车符。读取字符串时：(1) scanf()以Space、Enter、Tab结束一次输入，不会舍弃最后的回车符；(2) gets()以Enter结束...
     
 
         <a href="/2020/01/18/2020-01-18-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -372,11 +371,17 @@ div是...
 
     
         1.洛谷-P1296 奶牛的耳语
-1234567891011121314151617181920212223242526272829303132#include&lt;stdio.h&gt;#include&lt;math.h&gt;int main()&#123;  int n,d;  scanf("%d %d",&amp;n,&amp;d);  int a[n];  int g=0;  ...
+                
+                    
+                    
+                
+                在这里插入图片描述
+            
+1234567891011121314151617181920212223242526272829303132#include&lt;stdio.h&gt;#include&lt;math.h&gt;int main()&#123;  int n,d;  scanf("%d %d",&amp;n,&amp;d);  int a[...
     
 
         <a href="/2019/12/14/2019-12-14-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -417,12 +422,25 @@ div是...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1.洛谷-P1028 数的计算第一次写的时候大概思路：
-123456789101112131415#include&lt;stdio.h&gt;int cal(int n) &#123;  int sum=1;  if(n==1)    return sum;  for(int i=1; i&lt;=n/2; i++)    sum=sum+cal(i);  return sum;&#125...
+        1.洛谷-P1028 数的计算
+                
+                    
+                    
+                
+                在这里插入图片描述
+            
+第一次写的时候大概思路：
+                
+                    
+                    
+                
+                在这里插入图片描述
+            
+123456789101112131415#include&lt;stdio...
     
 
         <a href="/2019/12/07/2019-12-07-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -464,11 +482,18 @@ div是...
 
     
         1. PTA-寻找完美数
-123456789101112131415161718192021222324252627282930313233#include&lt;stdio.h&gt;int judge(int i) &#123;  int j=0;  int n=1;  for(int k=2; k&lt;i; k++) &#123;    if(i%k==0)&#123;      j...
+                
+                    
+                    
+                
+                在这里插入图片描述
+            
+
+123456789101112131415161718192021222324252627282930313233#include&lt;stdio.h&gt;int judge(int i) &#123;  int j=0;  int n=1;  for(int k=2; k&lt;i; k++) &#123;    if(i%k=...
     
 
         <a href="/2019/11/30/2019-11-30-post/" class="post-more waves-effect waves-button">
-            Continue reading...
+            阅读全文…
         </a>
     </div>
     
@@ -492,6 +517,9 @@ div是...
     <div class="top">
         
 <p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
     <span id="busuanzi_container_site_pv" style='display:none'>
         站点总访问量：<span id="busuanzi_value_site_pv"></span>
     </span>
@@ -500,7 +528,7 @@ div是...
 
         <p>
             
-            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
