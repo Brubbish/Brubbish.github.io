@@ -7,22 +7,3 @@
 #Disallow: /tags/*
 #Disallow: /archives/*
 
-User-Agent: 360Spider
-Disallow: /admin
-Disallow: /categories/*
-Disallow: /tags/*
-Disallow: /archives/*
-
-User-agent: Bingbot
-Disallow: /admin
-Disallow: /categories/*
-Disallow: /tags/*
-Disallow: /archives/*
-
-User-agent: *
-Disallow: /*
-Disallow: /admin
-Disallow: /categories/*
-Disallow: /tags/*
-Disallow: /archives/*
-Sitemap: https://brubbish.github.io/sitemap.xml
