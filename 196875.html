@@ -48,7 +48,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KiTi9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3Ki5a4.png">
 <meta property="article:published_time" content="2020-02-23T01:55:22.000Z">
-<meta property="article:modified_time" content="2020-02-23T02:01:47.343Z">
+<meta property="article:modified_time" content="2020-02-23T02:11:55.030Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -320,7 +320,7 @@ ga('send', 'pageview');
 <p>BIOS键盘缓冲区是系统启动后，BIOS用于存放INT 9中断例程所接收的键盘输入的内存区。可以储存15个键盘输入，一个键盘输入用一个字单元存放，高位字节存放扫描码，低位字节存放字符码  </p>
 <h2 id="直接定址表"><a href="#直接定址表" class="headerlink" title="直接定址表"></a>直接定址表</h2><h3 id="描述了单元长度的标号"><a href="#描述了单元长度的标号" class="headerlink" title="描述了单元长度的标号"></a>描述了单元长度的标号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a db 1,2,3,4,5,6,7,8</span><br><span class="line">b dw 0</span><br></pre></td></tr></table></figure>
 <p>a,b 后面没有’:’ ，这种标号不但表示了内存单元的地址，还表示了内存单元的长度，即字节单元(db)或字单元(dw)或双子单元(dd)</p>
-<p>offset操作符：取得标号的段地址（<a href="https://brubbish.github.io/34199.html#offset">https://brubbish.github.io/34199.html#offset</a> ）<br>seg操作符：取得标号的段地址</p>
+<p>offset操作符：取得标号的段地址（<a href="https://brubbish.github.io/34199.html#offset">https://brubbish.github.io/34199.html#offset</a> ）<br>seg操作符：取得标号的段地址  </p>
 <h1 id="OllyDbg-学习"><a href="#OllyDbg-学习" class="headerlink" title="OllyDbg 学习"></a>OllyDbg 学习</h1><h2 id="32位寄存器"><a href="#32位寄存器" class="headerlink" title="32位寄存器"></a>32位寄存器</h2><p>有EAX、ECX、EDX、EBX、ESP、EBP、ESI等。<br>调试时可以双击寄存器，修改寄存器的值。对EIP寄存器需要在反汇编窗口选择新的指令起始地址（’New origin here’）<br>标志寄存器：C、P、A、Z、S、T、D、O,双击值可以在0和1值切换  </p>
 <h2 id="单步跟踪快捷键"><a href="#单步跟踪快捷键" class="headerlink" title="单步跟踪快捷键"></a>单步跟踪快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">F7    单步步进，遇到call指令跟进</span><br><span class="line">F8    单步步过，遇到call指令不跟进</span><br><span class="line">F9+CTRL   直到出现ret&#x2F;retf&#x2F;iret指令中断</span><br><span class="line">F9+Alt    回到应用程序领空</span><br><span class="line">F9    运行程序</span><br><span class="line">F2    设置断点</span><br><span class="line">F2+CTRL   重新调试</span><br><span class="line">F12   暂停程序</span><br></pre></td></tr></table></figure>
 <h2 id="一个TraceMe"><a href="#一个TraceMe" class="headerlink" title="一个TraceMe"></a>一个TraceMe</h2><p>win32位获取文本框中内容的函数：<br>GetDlgItemTextA<br>GetDlgItemTextW<br>GetWindowTextA<br>GetWindowTextW<br>用’CTRL+G’打开跟随表达式窗口进行搜索  </p>
@@ -364,7 +364,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-23T02:01:47.343Z" itemprop="dateUpdated">2020-02-23 10:01:47</time>
+    最后更新时间：<time datetime="2020-02-23T02:11:55.030Z" itemprop="dateUpdated">2020-02-23 10:11:55</time>
 </span><br>
 
 
@@ -394,7 +394,14 @@ ga('send', 'pageview');
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/13498.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">课设-药店管理系统</h4>
+      </a>
+    </div>
   
 
   
