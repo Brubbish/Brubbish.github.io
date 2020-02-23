@@ -35,7 +35,7 @@ ga('send', 'pageview');
     <meta name="description" content="洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化 12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....  sprintf1sprintf(char *str, char * format [, argument, ...]); str为要写入的字符串；format为格式化字符串，与pr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.02.17-2020.02.23">
-<meta property="og:url" content="https://brubbish.github.io/196874.html">
+<meta property="og:url" content="https://brubbish.github.io/196875.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
 <meta property="og:description" content="洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化 12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....  sprintf1sprintf(char *str, char * format [, argument, ...]); str为要写入的字符串；format为格式化字符串，与pr">
 <meta property="og:locale" content="zh_CN">
@@ -47,8 +47,8 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KEqte.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KiTi9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3Ki5a4.png">
-<meta property="article:published_time" content="2020-02-17T02:04:50.644Z">
-<meta property="article:modified_time" content="2020-02-23T01:52:16.450Z">
+<meta property="article:published_time" content="2020-02-23T01:55:22.000Z">
+<meta property="article:modified_time" content="2020-02-23T01:55:08.388Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -145,8 +145,8 @@ ga('send', 'pageview');
         <h1 class="title">2020.02.17-2020.02.23</h1>
         <h5 class="subtitle">
             
-                <time datetime="2020-02-17T02:04:50.644Z" itemprop="datePublished" class="page-time">
-  2020-02-17
+                <time datetime="2020-02-23T01:55:22.000Z" itemprop="datePublished" class="page-time">
+  2020-02-23
 </time>
 
 
@@ -176,7 +176,7 @@ ga('send', 'pageview');
     <div class="post-card">
         <h1 class="post-card-title">2020.02.17-2020.02.23</h1>
         <div class="post-meta">
-            <time class="post-time" title="2020-02-17 10:04:50" datetime="2020-02-17T02:04:50.644Z"  itemprop="datePublished">2020-02-17</time>
+            <time class="post-time" title="2020-02-23 09:55:22" datetime="2020-02-23T01:55:22.000Z"  itemprop="datePublished">2020-02-23</time>
 
             
 
@@ -213,9 +213,9 @@ ga('send', 'pageview');
                     <img src="https://s2.ax1x.com/2020/02/23/3llKFs.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure>]
+            </figure>
 
-<p>&emsp;<br>思路：只会枚举<br><img src="https://s2.ax1x.com/2020/02/23/3lleeg.md.png" alt="突然发现多弄了一个点上去....">]</p>
+<p>&emsp;<br>思路：只会枚举<br><img src="https://s2.ax1x.com/2020/02/23/3lleeg.md.png" alt=""><br>(突然发现多弄了一个点上去….)</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n,m;</span><br><span class="line">  <span class="keyword">int</span> rectangle=<span class="number">0</span>,square=<span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">0</span>;a&lt;m+<span class="number">1</span>;a++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>;b&lt;n+<span class="number">1</span>;b++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> x=a+<span class="number">1</span>;x&lt;m+<span class="number">1</span>;x++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> y=b+<span class="number">1</span>;y&lt;n+<span class="number">1</span>;y++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(a-x==b-y)</span><br><span class="line">            square++;</span><br><span class="line">          <span class="keyword">else</span></span><br><span class="line">            rectangle++;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,square,rectangle);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="汇编学习"><a href="#汇编学习" class="headerlink" title="汇编学习"></a>汇编学习</h1><h3 id="中断过程"><a href="#中断过程" class="headerlink" title="中断过程"></a>中断过程</h3><p>cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&emsp;这个工作的过程<br>cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）<br>8086cpu收到中断信息后引发的中断过程：  </p>
 <ol>
@@ -364,7 +364,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-23T01:52:16.450Z" itemprop="dateUpdated">2020-02-23 09:52:16</time>
+    最后更新时间：<time datetime="2020-02-23T01:55:08.388Z" itemprop="dateUpdated">2020-02-23 09:55:08</time>
 </span><br>
 
 
