@@ -32,18 +32,23 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="周报">
-    <meta name="description" content="洛谷汇编学习中断过程cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&amp;emsp;这个工作的过程cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）8086cpu收到中断信息后引发的中断过程：    取得中断类型码 标志寄存器入栈 设置">
+    <meta name="description" content="洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化 12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....  sprintf1sprintf(char *str, char * format [, argument, ...]); str为要写入的字符串；format为格式化字符串，与pr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【未完周报】2020.02.17-2020.02.23">
 <meta property="og:url" content="https://brubbish.github.io/196873.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
-<meta property="og:description" content="洛谷汇编学习中断过程cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&amp;emsp;这个工作的过程cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）8086cpu收到中断信息后引发的中断过程：    取得中断类型码 标志寄存器入栈 设置">
+<meta property="og:description" content="洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化 12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....  sprintf1sprintf(char *str, char * format [, argument, ...]); str为要写入的字符串；format为格式化字符串，与pr">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KiIIJ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KEqte.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KiTi9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3Ki5a4.png">
 <meta property="article:published_time" content="2020-02-17T02:04:50.644Z">
-<meta property="article:modified_time" content="2020-02-18T13:20:46.514Z">
+<meta property="article:modified_time" content="2020-02-21T16:01:41.934Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/21/3KiIIJ.png">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -156,7 +161,7 @@ ga('send', 'pageview');
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#洛谷"><span class="post-toc-number">1.</span> <span class="post-toc-text">洛谷</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#汇编学习"><span class="post-toc-number">2.</span> <span class="post-toc-text">汇编学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中断过程"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">中断过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中断处理程序和iret指令"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">中断处理程序和iret指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单步中断"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">单步中断</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应中断的特殊情况"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">响应中断的特殊情况</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int指令"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">int指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOS中-断例程应用-中断例程"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">DOS中 断例程应用(中断例程)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#端口"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">端口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#端口的读写"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">端口的读写</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CMOS-RAM芯片"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">CMOS RAM芯片</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shl和shr指令"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">shl和shr指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CMOS-RAM中储存的时间信息"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">CMOS RAM中储存的时间信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BCD码"><span class="post-toc-number">2.2.1.1.</span> <span class="post-toc-text">BCD码</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#洛谷"><span class="post-toc-number">1.</span> <span class="post-toc-text">洛谷</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数整理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">函数整理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#memset"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">memset</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sprintf"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">sprintf</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#P1031-均分纸牌"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">P1031 均分纸牌</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#P1548-棋盘问题"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">P1548 棋盘问题</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#汇编学习"><span class="post-toc-number">2.</span> <span class="post-toc-text">汇编学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中断过程"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">中断过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中断处理程序和iret指令"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">中断处理程序和iret指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单步中断"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">单步中断</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应中断的特殊情况"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">响应中断的特殊情况</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int指令"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">int指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOS中-断例程应用-中断例程"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">DOS中 断例程应用(中断例程)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#端口"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">端口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#端口的读写"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">端口的读写</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CMOS-RAM芯片"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">CMOS RAM芯片</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shl和shr指令"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">shl和shr指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CMOS-RAM中储存的时间信息"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">CMOS RAM中储存的时间信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BCD码"><span class="post-toc-number">2.2.1.1.</span> <span class="post-toc-text">BCD码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#外中断"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">外中断</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外中断信息"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">外中断信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#外中断源："><span class="post-toc-number">2.3.1.1.</span> <span class="post-toc-text">外中断源：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pc机键盘的处理过程"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">pc机键盘的处理过程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接定址表"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">直接定址表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#描述了单元长度的标号"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">描述了单元长度的标号</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OllyDbg-学习"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">OllyDbg 学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#32位寄存器"><span class="post-toc-number">2.5.1.</span> <span class="post-toc-text">32位寄存器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单步跟踪快捷键"><span class="post-toc-number">2.5.2.</span> <span class="post-toc-text">单步跟踪快捷键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一个TraceMe"><span class="post-toc-number">2.5.3.</span> <span class="post-toc-text">一个TraceMe</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -180,7 +185,15 @@ ga('send', 'pageview');
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="洛谷"><a href="#洛谷" class="headerlink" title="洛谷"></a>洛谷</h1><h1 id="汇编学习"><a href="#汇编学习" class="headerlink" title="汇编学习"></a>汇编学习</h1><h3 id="中断过程"><a href="#中断过程" class="headerlink" title="中断过程"></a>中断过程</h3><p>cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&emsp;这个工作的过程<br>cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）<br>8086cpu收到中断信息后引发的中断过程：  </p>
+            <h1 id="洛谷"><a href="#洛谷" class="headerlink" title="洛谷"></a>洛谷</h1><h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h3><p>memset(数组名或指针，值，大小)<br>可用于数组初始化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line">....</span><br><span class="line"><span class="keyword">int</span> a[n];</span><br><span class="line"><span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+
+<h3 id="sprintf"><a href="#sprintf" class="headerlink" title="sprintf"></a>sprintf</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> * format [, argument, ...]);</span><br></pre></td></tr></table></figure>
+<p>str为要写入的字符串；format为格式化字符串，与printf()函数相同；argument为变量。<br>可用于把整数搞进字符串</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sprintf</span>(s, <span class="string">"%8x"</span>, <span class="number">4567</span>);  <span class="comment">//小写16进制，宽度占8个位置，右对齐，保存在s中</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">....</span><br><span class="line"><span class="keyword">char</span> a = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">80</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(buf, <span class="string">"The ASCII code of a is %d."</span>, a);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>, buf);</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+<p>sprintf不检测数组长度，容易造成缓冲区溢出，可用snprintf()代替</p>
+<h2 id="题"><a href="#题" class="headerlink" title="题"></a>题</h2><h3 id="P1031-均分纸牌"><a href="#P1031-均分纸牌" class="headerlink" title="P1031 均分纸牌"></a>P1031 均分纸牌</h3><h3 id="P1548-棋盘问题"><a href="#P1548-棋盘问题" class="headerlink" title="P1548 棋盘问题"></a>P1548 棋盘问题</h3><h1 id="汇编学习"><a href="#汇编学习" class="headerlink" title="汇编学习"></a>汇编学习</h1><h3 id="中断过程"><a href="#中断过程" class="headerlink" title="中断过程"></a>中断过程</h3><p>cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&emsp;这个工作的过程<br>cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）<br>8086cpu收到中断信息后引发的中断过程：  </p>
 <ol>
 <li>取得中断类型码</li>
 <li>标志寄存器入栈</li>
@@ -260,6 +273,43 @@ ga('send', 'pageview');
 <p>左移一位相当于X=X*2,右移一位相当于X=X/2</p>
 <h3 id="CMOS-RAM中储存的时间信息"><a href="#CMOS-RAM中储存的时间信息" class="headerlink" title="CMOS RAM中储存的时间信息"></a>CMOS RAM中储存的时间信息</h3><p>CMOS RAM中存放着年月日时分秒，这六个信息长度都为一个字节，以BCD码的方式存放。  </p>
 <h4 id="BCD码"><a href="#BCD码" class="headerlink" title="BCD码"></a>BCD码</h4><p>以四位二进制数表示十进制数的编码方式<br>一个字节可以表示两个BCD码，高4位表示十位，低4位表示个位  </p>
+<h2 id="外中断"><a href="#外中断" class="headerlink" title="外中断"></a>外中断</h2><p>及时处理外设的输入需要解决：1.cpu如何得知外设输入的时间&emsp;2.cpu从何处得到外设的输入</p>
+<h3 id="外中断信息"><a href="#外中断信息" class="headerlink" title="外中断信息"></a>外中断信息</h3><p>当cpu外部有需要处理的事情发生的时候，相关芯片将向cpu发出相应的中断信息。cpu在执行完当前指令后，可以检测到发送过来的中断信息，引发中断过程，处理外设的输入  </p>
+<h4 id="外中断源："><a href="#外中断源：" class="headerlink" title="外中断源："></a>外中断源：</h4><ul>
+<li>可屏蔽中断</li>
+</ul>
+<p>是cpu可以不响应的外中断。如果IF=1，则cpu在执行完当前指令后响应中断；如果IF=0，则不响应可屏蔽中断<br>中断类型码由数据总线送入cpu，不由cpu产生</p>
+<p>8086提供的设置IF指令：<br>1.sti—设置IF=1<br>2.cli—设置IF=0  </p>
+<ul>
+<li>不可屏蔽中断</li>
+</ul>
+<p>是cou必须响应的外中断。<br>对于8086cpu，不可屏蔽中断的中断类型码固定为2</p>
+<p>几乎所有由外设引发的外中断都是可屏蔽中断<br>不可屏蔽中断是在系统中有必须处理的紧急情况发生时用来通知cpu的中断信息</p>
+<h3 id="pc机键盘的处理过程"><a href="#pc机键盘的处理过程" class="headerlink" title="pc机键盘的处理过程"></a>pc机键盘的处理过程</h3><ol>
+<li>键盘输入<br>按下一个键时，键盘中的芯片产生一个扫描码（通码），说明了按下的建在键盘上的位置；松开按下的键时，也产生一个扫描码（断码），送入60h端口<br>扫描码的长度为一个字节，通码第七位为0，断码第七位为1：通码+80h=通码</li>
+<li>引发9号中断<br>相关芯片向cpu发出中断类型码为9的可屏蔽中断信息</li>
+<li>执行int 9 中断例程<br>BIOS提供了int 9中断例程，用来进行基本的键盘输入处理：   </li>
+<li>读出扫描码  </li>
+<li>如果是字符键的扫描码，将该扫描码和对应的ASCII码送入内存中的BIOS键盘缓冲区；如果是控制键，则将其转变为状态字节（二进制位控制状态的字节）写入内存中储存状态字节的单元   </li>
+<li>对键盘系统进行相关控制</li>
+</ol>
+<p>BIOS键盘缓冲区是系统启动后，BIOS用于存放INT 9中断例程所接收的键盘输入的内存区。可以储存15个键盘输入，一个键盘输入用一个字单元存放，高位字节存放扫描码，低位字节存放字符码  </p>
+<h2 id="直接定址表"><a href="#直接定址表" class="headerlink" title="直接定址表"></a>直接定址表</h2><h3 id="描述了单元长度的标号"><a href="#描述了单元长度的标号" class="headerlink" title="描述了单元长度的标号"></a>描述了单元长度的标号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a db 1,2,3,4,5,6,7,8</span><br><span class="line">b dw 0</span><br></pre></td></tr></table></figure>
+<p>a,b 后面没有’:’ ，这种标号不但表示了内存单元的地址，还表示了内存单元的长度，即字节单元(db)或字单元(dw)或双子单元(dd)</p>
+<p>offset操作符：取得标号的段地址（<a href="https://brubbish.github.io/34199.html#offset">https://brubbish.github.io/34199.html#offset</a> ）<br>seg操作符：取得标号的段地址</p>
+<h2 id="OllyDbg-学习"><a href="#OllyDbg-学习" class="headerlink" title="OllyDbg 学习"></a>OllyDbg 学习</h2><h3 id="32位寄存器"><a href="#32位寄存器" class="headerlink" title="32位寄存器"></a>32位寄存器</h3><p>有EAX、ECX、EDX、EBX、ESP、EBP、ESI等。<br>调试时可以双击寄存器，修改寄存器的值。对EIP寄存器需要在反汇编窗口选择新的指令起始地址（’New origin here’）<br>标志寄存器：C、P、A、Z、S、T、D、O,双击值可以在0和1值切换  </p>
+<h3 id="单步跟踪快捷键"><a href="#单步跟踪快捷键" class="headerlink" title="单步跟踪快捷键"></a>单步跟踪快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">F7    单步步进，遇到call指令跟进</span><br><span class="line">F8    单步步过，遇到call指令不跟进</span><br><span class="line">F9+CTRL   直到出现ret&#x2F;retf&#x2F;iret指令中断</span><br><span class="line">F9+Alt    回到应用程序领空</span><br><span class="line">F9    运行程序</span><br><span class="line">F2    设置断点</span><br><span class="line">F2+CTRL   重新调试</span><br><span class="line">F12   暂停程序</span><br></pre></td></tr></table></figure>
+<h3 id="一个TraceMe"><a href="#一个TraceMe" class="headerlink" title="一个TraceMe"></a>一个TraceMe</h3><p>win32位获取文本框中内容的函数：<br>GetDlgItemTextA<br>GetDlgItemTextW<br>GetWindowTextA<br>GetWindowTextW<br>用’CTRL+G’打开跟随表达式窗口进行搜索  </p>
+<p><img src="https://s2.ax1x.com/2020/02/21/3KiIIJ.png" alt="在函数入口处设一个断点，程序执行到此处暂停"><br>然后按’F9+Alt’跳到调用函数的位置   </p>
+<p><img src="https://s2.ax1x.com/2020/02/21/3KEqte.png" alt="004011E5-004011F5是用来判断用户名和序列号的"><br>顺便：因为真没见过test指令所以搜了一下：<a href="https://blog.csdn.net/zz709196484/article/details/77755243" target="_blank" rel="noopener">汇编语言–test和cmp区别</a>  </p>
+<p><img src="https://s2.ax1x.com/2020/02/21/3KiTi9.png" alt=""><br>执行到004011F5处，为了不跳转，把ZF寄存器取反或把此处指令改为nop<br>另外，程序限制字符要大于4个，在004011D5的位置。可以把此处跳转的指令（jl）改为nop，或把SF值和OF值改为相同。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2020/02/21/3Ki5a4.png" alt="..." title="">
+                </div>
+                <div class="image-caption">...</div>
+            </figure>
 
         </div>
 
@@ -268,7 +318,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-18T13:20:46.514Z" itemprop="dateUpdated">2020-02-18 21:20:46</time>
+    最后更新时间：<time datetime="2020-02-21T16:01:41.934Z" itemprop="dateUpdated">2020-02-22 00:01:41</time>
 </span><br>
 
 

@@ -172,19 +172,13 @@ ga('send', 'pageview');
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        洛谷汇编学习中断过程cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&emsp;这个工作的过程cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）8086cpu收到中断信息后引发的中断过程：  
+        洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化
+12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....
 
-取得中断类型码
-标志寄存器入栈
-设置标志寄存器TF和IF值位0
-cs内容入栈
-ip内容入栈
-从内存地址为中断类型码 *4和中断类型码 *4+2的两个字单元中读取中断处理程序的入口设置为cs和ip  
-
-即：
-
-取得中断类型码N
-p...
+sprintf1sprintf(char *str, char * format [, argument, ...]);
+str为要写入的字符串；format为格式化字符串，与printf()函数相同；argument为变量。可用于把整数搞进字符串
+1sprintf(s, "%8x", 4567);  //小写16进制，宽度占8个位置，右对齐，保存在s中
+1234567#...
     
 
         <a href="/196873.html" class="post-more waves-effect waves-button">
