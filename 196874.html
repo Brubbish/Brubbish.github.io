@@ -35,24 +35,24 @@ ga('send', 'pageview');
     <meta name="description" content="洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化 12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....  sprintf1sprintf(char *str, char * format [, argument, ...]); str为要写入的字符串；format为格式化字符串，与pr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.02.17-2020.02.23">
-<meta property="og:url" content="https://brubbish.github.io/196873.html">
+<meta property="og:url" content="https://brubbish.github.io/196874.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
 <meta property="og:description" content="洛谷函数整理memsetmemset(数组名或指针，值，大小)可用于数组初始化 12345#include&lt;string.h&gt;....int a[n];memset(a,0,sizeof(a));....  sprintf1sprintf(char *str, char * format [, argument, ...]); str为要写入的字符串；format为格式化字符串，与pr">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.ax1x.com/2020/02/23/3llMYn.png">
-<meta property="og:image" content="https://s2.ax1x.com/2020/02/23/3llnoj.png">
-<meta property="og:image" content="https://s2.ax1x.com/2020/02/23/3llKFs.png">
-<meta property="og:image" content="https://s2.ax1x.com/2020/02/23/3lleeg.png">
+<meta property="og:image" content="https://imgchr.com/i/3llMYn">
+<meta property="og:image" content="https://imgchr.com/i/3llnoj">
+<meta property="og:image" content="https://imgchr.com/i/3llKFs">
+<meta property="og:image" content="https://imgchr.com/i/3lleeg">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KiIIJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KEqte.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3KiTi9.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/21/3Ki5a4.png">
 <meta property="article:published_time" content="2020-02-17T02:04:50.644Z">
-<meta property="article:modified_time" content="2020-02-23T01:39:10.692Z">
+<meta property="article:modified_time" content="2020-02-23T01:47:36.447Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/23/3llMYn.png">
+<meta name="twitter:image" content="https://imgchr.com/i/3llMYn">
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
@@ -197,25 +197,35 @@ ga('send', 'pageview');
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sprintf</span>(s, <span class="string">"%8x"</span>, <span class="number">4567</span>);  <span class="comment">//小写16进制，宽度占8个位置，右对齐，保存在s中</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">....</span><br><span class="line"><span class="keyword">char</span> a = <span class="string">'a'</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">80</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(buf, <span class="string">"The ASCII code of a is %d."</span>, a);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>, buf);</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
 <p>sprintf不检测数组长度，容易造成缓冲区溢出，可用snprintf()代替</p>
-<h2 id="题"><a href="#题" class="headerlink" title="题"></a>题</h2><h3 id="P1031-均分纸牌"><a href="#P1031-均分纸牌" class="headerlink" title="P1031 均分纸牌"></a>P1031 均分纸牌</h3><figure class="image-bubble">
+<h2 id="题"><a href="#题" class="headerlink" title="题"></a>题</h2><h3 id="P1031-均分纸牌"><a href="#P1031-均分纸牌" class="headerlink" title="P1031 均分纸牌"></a>P1031 均分纸牌</h3><p>[<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://s2.ax1x.com/2020/02/23/3llMYn.png" alt="" title="">
+                    <img src="https://imgchr.com/i/3llMYn" alt="3llMYn.md.png](https://s2.ax1x.com/2020/02/23/3llMYn.md.png)" title="">
                 </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>&emsp;</p>
-<p>没啥思路就看了题解:<br><img src="https://s2.ax1x.com/2020/02/23/3llnoj.png" alt=""><br>得到代码：</p>
+                <div class="image-caption">3llMYn.md.png](https://s2.ax1x.com/2020/02/23/3llMYn.md.png)</div>
+            </figure></p>
+<p>&emsp;<br>没啥思路就看了题解:<br>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://imgchr.com/i/3llnoj" alt="3llnoj.png](https://s2.ax1x.com/2020/02/23/3llnoj.png)" title="">
+                </div>
+                <div class="image-caption">3llnoj.png](https://s2.ax1x.com/2020/02/23/3llnoj.png)</div>
+            </figure><br>得到代码：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">  <span class="keyword">int</span> a[n];</span><br><span class="line">  <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    sum+=a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  sum=sum/n;</span><br><span class="line">    <span class="comment">//均分过程：</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(a[i]-sum!=<span class="number">0</span>)&#123;</span><br><span class="line">      a[i+<span class="number">1</span>]+=a[i]-sum,</span><br><span class="line">      cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d"</span>,cnt);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="P1548-棋盘问题"><a href="#P1548-棋盘问题" class="headerlink" title="P1548 棋盘问题"></a>P1548 棋盘问题</h3><figure class="image-bubble">
+<h3 id="P1548-棋盘问题"><a href="#P1548-棋盘问题" class="headerlink" title="P1548 棋盘问题"></a>P1548 棋盘问题</h3><p>[<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://s2.ax1x.com/2020/02/23/3llKFs.png" alt="" title="">
+                    <img src="https://imgchr.com/i/3llKFs" alt="3llKFs.png](https://s2.ax1x.com/2020/02/23/3llKFs.png)" title="">
                 </div>
-                <div class="image-caption"></div>
-            </figure>
-<p>&emsp;</p>
-<p>思路：只会枚举<br><img src="https://s2.ax1x.com/2020/02/23/3lleeg.png" alt=""></p>
+                <div class="image-caption">3llKFs.png](https://s2.ax1x.com/2020/02/23/3llKFs.png)</div>
+            </figure></p>
+<p>&emsp;<br>思路：只会枚举<br>[<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://imgchr.com/i/3lleeg" alt="3lleeg.md.png](https://s2.ax1x.com/2020/02/23/3lleeg.md.png)" title="">
+                </div>
+                <div class="image-caption">3lleeg.md.png](https://s2.ax1x.com/2020/02/23/3lleeg.md.png)</div>
+            </figure></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n,m;</span><br><span class="line">  <span class="keyword">int</span> rectangle=<span class="number">0</span>,square=<span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">0</span>;a&lt;m+<span class="number">1</span>;a++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">0</span>;b&lt;n+<span class="number">1</span>;b++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> x=a+<span class="number">1</span>;x&lt;m+<span class="number">1</span>;x++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> y=b+<span class="number">1</span>;y&lt;n+<span class="number">1</span>;y++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(a-x==b-y)</span><br><span class="line">            square++;</span><br><span class="line">          <span class="keyword">else</span></span><br><span class="line">            rectangle++;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,square,rectangle);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="汇编学习"><a href="#汇编学习" class="headerlink" title="汇编学习"></a>汇编学习</h1><h3 id="中断过程"><a href="#中断过程" class="headerlink" title="中断过程"></a>中断过程</h3><p>cpu的硬件自动完成：用中断类型码找到中断向量，并用它设置cs和ip&emsp;这个工作的过程<br>cpu在完成中断处理程序后，返回原来的执行点继续执行下面的指令。所以在设置cs:ip之前，还要将原来的cs和ip的值保存起来（同样，在使用call指令时也先保存当前cs和ip的值，再设置cs和ip）<br>8086cpu收到中断信息后引发的中断过程：  </p>
 <ol>
@@ -364,7 +374,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-23T01:39:10.692Z" itemprop="dateUpdated">2020-02-23 09:39:10</time>
+    最后更新时间：<time datetime="2020-02-23T01:47:36.447Z" itemprop="dateUpdated">2020-02-23 09:47:36</time>
 </span><br>
 
 
