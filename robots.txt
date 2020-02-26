@@ -1,9 +1,6 @@
 # hexo robots.txt
-#User-agent: baidspider
-#Disallow: /
-#Disallow: /*
-#Disallow: /admin
-#Disallow: /categories/*
-#Disallow: /tags/*
-#Disallow: /archives/*
+User-agent: Googlebot
+Disallow: /google5dc74d1e04f67b06.html
+Disallow: /baidu_verify_vqz3gO3QSP.html
+
 
