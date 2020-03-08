@@ -32,15 +32,15 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="周报">
-    <meta name="description" content="1.用github搞了博客参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F;并用了他的模板….页面还没改完 2.汇编语言学习[BX]和loop指令一次执行完循环的过程：g指令：“g 0012”从当前的cs：ip指向的指令执行，一直到（ip）&#x3D;0012为止p指令：直到（cx）&#x3D;0为止 段前缀：在访问内存单元的指令中显式低给出内存单元段地址所在的段寄存器，">
+    <meta name="description" content="1.用github搞了博客参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F;并用了他的模板….页面还没改完">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.01.19-2020.02.02">
 <meta property="og:url" content="https://brubbish.github.io/17577.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
-<meta property="og:description" content="1.用github搞了博客参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F;并用了他的模板….页面还没改完 2.汇编语言学习[BX]和loop指令一次执行完循环的过程：g指令：“g 0012”从当前的cs：ip指向的指令执行，一直到（ip）&#x3D;0012为止p指令：直到（cx）&#x3D;0为止 段前缀：在访问内存单元的指令中显式低给出内存单元段地址所在的段寄存器，">
+<meta property="og:description" content="1.用github搞了博客参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F;并用了他的模板….页面还没改完">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T08:26:22.000Z">
-<meta property="article:modified_time" content="2020-02-14T09:50:58.501Z">
+<meta property="article:modified_time" content="2020-03-02T07:42:31.242Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -181,6 +181,7 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="1-用github搞了博客"><a href="#1-用github搞了博客" class="headerlink" title="1.用github搞了博客"></a>1.用github搞了博客</h2><p>参考：<a href="https://www.fast.ai/2020/01/16/fast_template/" target="_blank" rel="noopener">https://www.fast.ai/2020/01/16/fast_template/</a><br>并用了他的模板….<br>页面还没改完</p>
+<a id="more"></a>
 <h2 id="2-汇编语言学习"><a href="#2-汇编语言学习" class="headerlink" title="2.汇编语言学习"></a>2.汇编语言学习</h2><h4 id="BX-和loop指令"><a href="#BX-和loop指令" class="headerlink" title="[BX]和loop指令"></a>[BX]和loop指令</h4><p>一次执行完循环的过程：<br>g指令：<br>“g 0012”从当前的cs：ip指向的指令执行，一直到（ip）=0012为止<br>p指令：<br>直到（cx）=0为止</p>
 <h4 id="段前缀："><a href="#段前缀：" class="headerlink" title="段前缀："></a>段前缀：</h4><p>在访问内存单元的指令中显式低给出内存单元段地址所在的段寄存器，如：<br>mov ax,ds:[bx]<br>mov ax,cs:[bx]<br>mov ax,ss,[bx]<br>mov ax,ex,[0]<br>….</p>
 <h4 id="在代码段中使用数据"><a href="#在代码段中使用数据" class="headerlink" title="在代码段中使用数据"></a>在代码段中使用数据</h4><p>code segment<br>“dw 0123，0456”<br>….<br>dw的含义是定义字型数据，因为用dw定义的数据出于代码段的最开始，所以偏移地址为0，这两个数据就在代码段的偏移0，2 处，地址为cs:0,cs:2</p>
@@ -213,7 +214,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-14T09:50:58.501Z" itemprop="dateUpdated">2020-02-14 17:50:58</time>
+    最后更新时间：<time datetime="2020-03-02T07:42:31.242Z" itemprop="dateUpdated">2020-03-02 15:42:31</time>
 </span><br>
 
 

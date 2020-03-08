@@ -32,17 +32,17 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="周报">
-    <meta name="description" content="1.scanf、getchar、getch、getche和缓冲区https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1354983https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lanhaicode&#x2F;p&#x2F;10575049.html  读取字符时：(1)scanf()以 Enter 结束一次输入，不会舍弃最后的回车符（即回车符会残留在缓冲区中）；(2)getcha">
+    <meta name="description" content="1.scanf、getchar、getch、getche和缓冲区https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1354983https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lanhaicode&#x2F;p&#x2F;10575049.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.01.12-2020.01.18">
 <meta property="og:url" content="https://brubbish.github.io/19661.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
-<meta property="og:description" content="1.scanf、getchar、getch、getche和缓冲区https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1354983https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lanhaicode&#x2F;p&#x2F;10575049.html  读取字符时：(1)scanf()以 Enter 结束一次输入，不会舍弃最后的回车符（即回车符会残留在缓冲区中）；(2)getcha">
+<meta property="og:description" content="1.scanf、getchar、getch、getche和缓冲区https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1354983https:&#x2F;&#x2F;www.cnblogs.com&#x2F;lanhaicode&#x2F;p&#x2F;10575049.html">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200117224034766.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JydWlzaGk=,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200117223137978.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0JydWlzaGk=,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-01-18T06:13:51.000Z">
-<meta property="article:modified_time" content="2020-02-14T09:50:58.499Z">
+<meta property="article:modified_time" content="2020-03-02T07:42:30.367Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta name="twitter:card" content="summary">
@@ -184,6 +184,7 @@ ga('send', 'pageview');
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="1-scanf、getchar、getch、getche和缓冲区"><a href="#1-scanf、getchar、getch、getche和缓冲区" class="headerlink" title="1.scanf、getchar、getch、getche和缓冲区"></a>1.scanf、getchar、getch、getche和缓冲区</h2><p><a href="https://cloud.tencent.com/developer/article/1354983" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1354983</a><br><a href="https://www.cnblogs.com/lanhaicode/p/10575049.html" target="_blank" rel="noopener">https://www.cnblogs.com/lanhaicode/p/10575049.html</a></p>
+<a id="more"></a>
 <blockquote>
 <p>读取字符时：<br>(1)scanf()以 Enter 结束一次输入，不会舍弃最后的回车符（即回车符会残留在缓冲区中）；<br>(2)getchar()以 Enter 结束输入，不会舍弃最后的回车符。<br>读取字符串时：<br>(1) scanf()以Space、Enter、Tab结束一次输入，不会舍弃最后的回车符；<br>(2) gets()以Enter结束输入（空格不结束），接受空格，会舍弃最后的回车符！<br>所以读取一个字符串中的每一个字符的时候，往往使用getchar()而不使用scanf()，因为一个字符串中是会出现空格的。如果使用scanf()会造成将一个字符串首先读入第一个空格前的部分，其余部分会残留在输入缓冲区的情况，在下次读取时可能会出现错误。<br>其次为了避免出现上述问题，必须要在读取输入前，清空缓冲区的残留数据</p>
 </blockquote>
@@ -236,7 +237,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-14T09:50:58.499Z" itemprop="dateUpdated">2020-02-14 17:50:58</time>
+    最后更新时间：<time datetime="2020-03-02T07:42:30.367Z" itemprop="dateUpdated">2020-03-02 15:42:30</time>
 </span><br>
 
 
