@@ -44,7 +44,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCDaj.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCBZQ.png">
 <meta property="article:published_time" content="2020-03-22T04:57:00.000Z">
-<meta property="article:modified_time" content="2020-03-29T07:03:39.858Z">
+<meta property="article:modified_time" content="2020-03-29T12:01:17.780Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta property="article:tag" content="加密与解密">
@@ -208,8 +208,22 @@ ga('send', 'pageview');
 <p>（在下面的64位中描述更完整）</p>
 <h2 id="文本字符串"><a href="#文本字符串" class="headerlink" title="文本字符串"></a>文本字符串</h2><h3 id="字符寻址指令"><a href="#字符寻址指令" class="headerlink" title="字符寻址指令"></a>字符寻址指令</h3><p>与字符指针处理相关的指令有mov、lea等<br>mov指令将地址/寄存器中的数据放到目的寄存器中，如mov eax [401000]/[ecx]<br>lea（load effective address）操作数是地址,lea eax,[addr] 就是把addr的地址放入eax中  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lea eax,[401000]</span><br><span class="line">等价于</span><br><span class="line">mov eax,401000</span><br></pre></td></tr></table></figure>
-<h3 id="计算字符串长度"><a href="#计算字符串长度" class="headerlink" title="计算字符串长度"></a>计算字符串长度</h3><p>c语言的strlen()：<br><img src="https://s1.ax1x.com/2020/03/25/8xCwqg.png" alt=" "></p>
-<h1 id="64位软件逆向技术"><a href="#64位软件逆向技术" class="headerlink" title="64位软件逆向技术"></a>64位软件逆向技术</h1><p>x64通用寄存器的名称第一个字母由e改为r，共16个；16个128位xmm寄存器（通常用于优化代码）<br><img src="https://s1.ax1x.com/2020/03/25/8xCDaj.png" alt=" "></p>
+<h3 id="计算字符串长度"><a href="#计算字符串长度" class="headerlink" title="计算字符串长度"></a>计算字符串长度</h3><p>c语言的strlen()：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/03/25/8xCwqg.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h1 id="64位软件逆向技术"><a href="#64位软件逆向技术" class="headerlink" title="64位软件逆向技术"></a>64位软件逆向技术</h1><p>x64通用寄存器的名称第一个字母由e改为r，共16个；16个128位xmm寄存器（通常用于优化代码）</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s1.ax1x.com/2020/03/25/8xCDaj.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="栈平衡"><a href="#栈平衡" class="headerlink" title="栈平衡"></a>栈平衡</h3><p>每8字节的栈空间用来保存一个数据<br>尽量保证栈顶对齐值为16（可以被16整除）</p>
 <h3 id="调用约定"><a href="#调用约定" class="headerlink" title="调用约定"></a>调用约定</h3><p>x86（32位）的函数调用有stdcall、__cdecl、fastcall等，x64只有一种寄存器快速调用约定：  </p>
 <ol>
@@ -251,7 +265,7 @@ ga('send', 'pageview');
 <li><p>其他</p>
 </li>
 </ol>
-<h1 id="python爬虫学习"><a href="#python爬虫学习" class="headerlink" title="python爬虫学习"></a>python爬虫学习</h1><p>还没放上来</p>
+<h1 id="python爬虫学习"><a href="#python爬虫学习" class="headerlink" title="python爬虫学习"></a>python爬虫学习</h1><p><a href="https://brubbish.github.io/710f8e5f.html">https://brubbish.github.io/710f8e5f.html</a></p>
 
         </div>
 
@@ -260,7 +274,7 @@ ga('send', 'pageview');
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-03-29T07:03:39.858Z" itemprop="dateUpdated">2020-03-29 15:03:39</time>
+    最后更新时间：<time datetime="2020-03-29T12:01:17.780Z" itemprop="dateUpdated">2020-03-29 20:01:17</time>
 </span><br>
 
 
