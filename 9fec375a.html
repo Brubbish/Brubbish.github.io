@@ -20,7 +20,7 @@ ga('send', 'pageview');
 
     <meta charset="utf-8">
     
-    <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4" />
+    <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4">
     
     
     
@@ -157,13 +157,6 @@ ga('send', 'pageview');
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OllyDbg-学习"><span class="post-toc-number">1.</span> <span class="post-toc-text">OllyDbg 学习</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用断点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">常用断点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-interrupt-3断点"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">int(interrupt) 3断点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#硬件断点"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">硬件断点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存断点"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">内存断点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内存访问一次性断点"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">内存访问一次性断点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#消息断点"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">消息断点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#条件断点"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">条件断点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#条件记录断点"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">条件记录断点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Run-trace"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Run trace</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hit-trace"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Hit trace</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OD常见问题"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">OD常见问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#乱码"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">乱码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在反汇编窗口输入’push-E000’不能正确识别"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">在反汇编窗口输入’push E000’不能正确识别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#od’假死’"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">od’假死’</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#静态分析技术"><span class="post-toc-number">2.</span> <span class="post-toc-text">静态分析技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件类型分析"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">文件类型分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IDA"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">IDA</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
 
 <article id="post-2020-02-24-post"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -177,10 +170,6 @@ ga('send', 'pageview');
 
 
             
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
-
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
@@ -188,14 +177,7 @@ ga('send', 'pageview');
 <a id="more"></a>
 <p>优点是可以设置无数个指令，缺点是<strong>改变了原程序机器码，容易被软件检测到</strong>，例如有些软件会检测api的首地址是否为0xCC</p>
 <h3 id="硬件断点"><a href="#硬件断点" class="headerlink" title="硬件断点"></a>硬件断点</h3><p>和DRx调试寄存器有关<br>DRx调试器共有8个（x从0 ~ 7）</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://s2.ax1x.com/2020/02/24/3G1qVf.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>  
-
+<p><img src="https://s2.ax1x.com/2020/02/24/3G1qVf.png" alt=" ">  </p>
 <p>0 ~ 3：调试地址寄存器，用于保存需要监视的地址，例如设置硬件断点<br>4、5：（先不做了解）<br>6：调试寄存器组状态寄存器（’这个寄存器主要是在调试异常产生后，报告产生调试异常的相关信息’)<br>7：调试寄存器组控制寄存器，控制调试<br>硬件断点的原理是使用DR0、DR1、DR2、DR3设定地址，并用DR7设定状态，因此最多设置4个断点<br>设置方法为：1.在代码行单击右键，执行’断点’-&gt;’硬件执行&emsp;2.在数据窗口’右键’-&gt;’硬件访问断点’-&gt;（选择数据长度1/2/4字节），如4字节（Dword)当访问xxxxx0~xxxxx3的内存时会被断下  </p>
 <p>快捷键’F4’执行到光标所在的行</p>
 <h3 id="内存断点"><a href="#内存断点" class="headerlink" title="内存断点"></a>内存断点</h3><p>原理是对所设的地址赋予不可访问/不可写属性，当访问/写入的时候就会产生异常，OD比较异常地址是不是断点地址，如果是就中断<br>设置内存断点在每次出现异常时都需要比较来判断是否应该中断，所以会降低OD的执行速度<br>OD只能下一个内存断点，设置方法为：在数据/代码窗口选中要下断点的地址区域，右键执行’断点’-&gt;’内存写入’<br>硬件访问/写入断点实在触发硬件断点的下一条指令处下断；内存断点是在触发断点的指令处下断。<br>内存断点不修改原始代码，不会因为被程序校验而失败</p>
@@ -322,15 +304,6 @@ ga('send', 'pageview');
         <footer class="footer">
     <div class="top">
         
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
 
         <p>
             
@@ -385,8 +358,6 @@ var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
 
 
 
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-153514659-2', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4">
+    
+    
+    
+    
+    <title>2020.03.23-2020.03.29 | Brubbish&#39;s</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="周报,加密与解密">
+    <meta name="description" content="32位软件逆向技术控制语句条件设置指令（SETcc）条件设置指令的形式是“SETcc r&#x2F;m8”， r&#x2F;m8表示8位寄存器或单字节内存单元条件设置指令测试一些标志位，把结果记录的目标操作数中测试：  of（&#x3D;1溢出） zf（&#x3D;1操作后等于0&#x2F;相等） cf（&#x3D;1进位&#x2F;低于） cf、zf结合判断 sf（&#x3D;1操作后结果为负） pf（&#x3D;1，1个数为偶数） sf、of结合判断（&#x3D;1小于） zf（&#x3D;1或zf!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020.03.23-2020.03.29">
+<meta property="og:url" content="https://brubbish.github.io/50551.html">
+<meta property="og:site_name" content="Brubbish&#39;s">
+<meta property="og:description" content="32位软件逆向技术控制语句条件设置指令（SETcc）条件设置指令的形式是“SETcc r&#x2F;m8”， r&#x2F;m8表示8位寄存器或单字节内存单元条件设置指令测试一些标志位，把结果记录的目标操作数中测试：  of（&#x3D;1溢出） zf（&#x3D;1操作后等于0&#x2F;相等） cf（&#x3D;1进位&#x2F;低于） cf、zf结合判断 sf（&#x3D;1操作后结果为负） pf（&#x3D;1，1个数为偶数） sf、of结合判断（&#x3D;1小于） zf（&#x3D;1或zf!">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/22/8IMgHA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCwqg.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCDaj.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCBZQ.png">
+<meta property="article:published_time" content="2020-03-22T04:57:00.000Z">
+<meta property="article:modified_time" content="2020-03-29T07:03:39.858Z">
+<meta property="article:author" content="Bruce">
+<meta property="article:tag" content="周报">
+<meta property="article:tag" content="加密与解密">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/22/8IMgHA.png">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Bruce</h5>
+          <a href="mailto:BruceQiuu@outlook.com" title="BruceQiuu@outlook.com" class="mail">BruceQiuu@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/brubbish" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">2020.03.23-2020.03.29</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">2020.03.23-2020.03.29</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-22T04:57:00.000Z" itemprop="datePublished" class="page-time">
+  2020-03-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-2020-03-29-post"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">2020.03.23-2020.03.29</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-22 12:57:00" datetime="2020-03-22T04:57:00.000Z"  itemprop="datePublished">2020-03-22</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="32位软件逆向技术"><a href="#32位软件逆向技术" class="headerlink" title="32位软件逆向技术"></a>32位软件逆向技术</h1><h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><h3 id="条件设置指令（SETcc）"><a href="#条件设置指令（SETcc）" class="headerlink" title="条件设置指令（SETcc）"></a>条件设置指令（SETcc）</h3><p>条件设置指令的形式是“SET<u>cc</u> r/m8”， r/m8表示8位寄存器或单字节内存单元<br>条件设置指令测试一些标志位，把结果记录的目标操作数中<br>测试：</p>
+<ol>
+<li>of（=1溢出）</li>
+<li>zf（=1操作后等于0/相等）</li>
+<li>cf（=1进位/低于）</li>
+<li>cf、zf结合判断</li>
+<li>sf（=1操作后结果为负）</li>
+<li>pf（=1，1个数为偶数）</li>
+<li>sf、of结合判断（=1小于）</li>
+<li>zf（=1或zf!=of，不大于）<blockquote>
+<p><a href="https://brubbish.github.io/34199.html#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8">https://brubbish.github.io/34199.html#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8</a></p>
+</blockquote>
+</li>
+</ol>
+<p>条件设置指令可以用来消除程序中的转移指令<br>如：<br><img src="https://s1.ax1x.com/2020/03/22/8IMgHA.png" alt=" "></p>
+<h3 id="纯算法实现逻辑判断"><a href="#纯算法实现逻辑判断" class="headerlink" title="纯算法实现逻辑判断"></a>纯算法实现逻辑判断</h3><p>一些编译器在优化的时候，会不改变原逻辑的情况下，使用数学技巧把代码中的一些逻辑分支语句转换为算术操作，减少程序中的条件转移指令，提高cpu的流水线的性能（….tql)  </p>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>可以进行反向引用<br>其他类型的分支语句，如if-else都是由低地址向高地址区域引用的（向下跳），依此可以将循环语句识别出来（调回去）<br>确定某段代码是循环代码后就可以分析计数器（一般用ecx）  </p>
+<p>如果编译时设置优化“Maximize Speed”：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xor ecx,ecx             ;变量初始化sum&#x3D;0</span><br><span class="line">xor eax,eax             ；变量初始化i&#x3D;0</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+
+<h2 id="数学运算符"><a href="#数学运算符" class="headerlink" title="数学运算符"></a>数学运算符</h2><p>如果编译器没有进行优化，则这些运算符很容易理解（….)所以下面都是经过优化的</p>
+<h3 id="整数的加法和减法"><a href="#整数的加法和减法" class="headerlink" title="整数的加法和减法"></a>整数的加法和减法</h3><p>用lea代替add和sub<br>lea指令允许用户在一个时钟内完成对c=a+b+78h（某个数）的计算，其中abc都是在有寄存器的情况下才有效的，如：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lea c,[a+b+78]</span><br><span class="line">&#x3D;&gt;</span><br><span class="line">mov eax,dword ptr [esp]     ;eax&#x3D;a</span><br><span class="line">mov ecx,dword ptr [esp]     ;ecx&#x3D;b</span><br><span class="line">lea edx,dword ptr [ecx+eax+78]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>时钟周期：一个时钟脉冲所需要的时间。（计组）</p>
+</blockquote>
+<h3 id="整数的乘法"><a href="#整数的乘法" class="headerlink" title="整数的乘法"></a>整数的乘法</h3><p>一般被编译成mul（无符号）、imul（有符号）指令（运行慢），为了提高效率会用其他指令完成<br>如果一个数是2的幂，用左移指令shl；3、5、6、7、9等数用加法提高效率：如把exa*5写成”lea eax,[eax+4 *4];lea指令可以实现寄存器乘以2、4、8的运算  </p>
+<h3 id="整数的除法"><a href="#整数的除法" class="headerlink" title="整数的除法"></a>整数的除法</h3><p>一般被编译成div、idiv指令，大概比乘法运算多消耗10倍cpu时钟<br>如果除数是2的幂，可用右移指令’shr a,n’：a是被除数，n是2的指数（进行无符号数计算）有符号数用sar指令  </p>
+<p>除法指令需要用到符号扩展指令cdq，作用是把eax中的数视为有符号数，将eax的最高位（符号位）扩展到edx中。如果eax最高位是1，执行后edx=FFFFFFFF;如果是0，edx=00000000。通过这种方法把32位有符号数变为edx：eax的64位有符号数，满足64位运算指令的需要。</p>
+<p>对除法优化时会用乘法代替除法，优化的公式较多，一例如：倒数相乘a*b=a *(1/b)</p>
+<p>（在下面的64位中描述更完整）</p>
+<h2 id="文本字符串"><a href="#文本字符串" class="headerlink" title="文本字符串"></a>文本字符串</h2><h3 id="字符寻址指令"><a href="#字符寻址指令" class="headerlink" title="字符寻址指令"></a>字符寻址指令</h3><p>与字符指针处理相关的指令有mov、lea等<br>mov指令将地址/寄存器中的数据放到目的寄存器中，如mov eax [401000]/[ecx]<br>lea（load effective address）操作数是地址,lea eax,[addr] 就是把addr的地址放入eax中  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lea eax,[401000]</span><br><span class="line">等价于</span><br><span class="line">mov eax,401000</span><br></pre></td></tr></table></figure>
+<h3 id="计算字符串长度"><a href="#计算字符串长度" class="headerlink" title="计算字符串长度"></a>计算字符串长度</h3><p>c语言的strlen()：<br><img src="https://s1.ax1x.com/2020/03/25/8xCwqg.png" alt=" "></p>
+<h1 id="64位软件逆向技术"><a href="#64位软件逆向技术" class="headerlink" title="64位软件逆向技术"></a>64位软件逆向技术</h1><p>x64通用寄存器的名称第一个字母由e改为r，共16个；16个128位xmm寄存器（通常用于优化代码）<br><img src="https://s1.ax1x.com/2020/03/25/8xCDaj.png" alt=" "></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="栈平衡"><a href="#栈平衡" class="headerlink" title="栈平衡"></a>栈平衡</h3><p>每8字节的栈空间用来保存一个数据<br>尽量保证栈顶对齐值为16（可以被16整除）</p>
+<h3 id="调用约定"><a href="#调用约定" class="headerlink" title="调用约定"></a>调用约定</h3><p>x86（32位）的函数调用有stdcall、__cdecl、fastcall等，x64只有一种寄存器快速调用约定：  </p>
+<ol>
+<li>整数：前四个参数用寄存器rcx→rdx→r8→r9，其余放在栈里，入栈顺序从右到左，任何大于8字节或不是1、2、4、8字节的参数用地址传递</li>
+<li>浮点数：前四个参数用xmm寄存器完成：xmm0→xmm1→xmm2→xmm3  </li>
+</ol>
+<p><img src="https://s1.ax1x.com/2020/03/25/8xCBZQ.png" alt=" "></p>
+<p>栈为函数的前四个参数预留了32字节的空间，当函数功能复杂时将寄存器的参数保存到这个预留栈空间。预览栈空间由函数调用者申请、平衡  </p>
+<h2 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h2><h3 id="整数的除法-1"><a href="#整数的除法-1" class="headerlink" title="整数的除法"></a>整数的除法</h3><ol>
+<li>有符号数，除数为2^n<br>x&gt;=0,x/2^n=x&gt;&gt;n<br>x&lt;0,x/2^n=（x+（2^n-1））&gt;&gt;n<br>除数为-2^n时最后用’neg 寄存器’指令求补  </li>
+<li>有符号数，除数为正，非2^n<br>32位：x&gt;=0,result=(x<em>c&gt;&gt;32)+x&gt;&gt;n,&lt;0时结果再+1<br>64位：x&gt;=0,result=(x</em>c&gt;&gt;64)+x&gt;&gt;n,&lt;0时结果再+1  </li>
+<li>有符号数，除数为负，非2^n<br>32位：x&gt;=0,result=(x<em>c&gt;&gt;32)-x&gt;&gt;n,&lt;0时结果再+1<br>64位：x&gt;=0,result=(x</em>c&gt;&gt;64)-x&gt;&gt;n,&lt;0时结果再+1  </li>
+</ol>
+<ul>
+<li>c为魔数  </li>
+</ul>
+<ol start="4">
+<li>无符号数，除数位2^n<br>用shr右移</li>
+<li>无符号数，除数非2^n<br>32位：x&gt;=0,result=x<em>c&gt;&gt;32&gt;&gt;n<br>62位：x&gt;=0,result=x</em>c&gt;&gt;62&gt;&gt;n</li>
+</ol>
+<h2 id="整数取模"><a href="#整数取模" class="headerlink" title="整数取模"></a>整数取模</h2><p>可以用除法指令，但是除法指令执行周期较长，通常优化将其转换成位运算或除法运算，再用除法运算进行优化  </p>
+<ol>
+<li>除数b=2^n<br>取得被除数二进制数的最后n位，负数要在n位之前补1：<br>x&gt;=0,result=x&amp;(b-1);x&lt;0,result=(x&amp;(b-1))-1|(~b-1)+1</li>
+<li>除数b!=2^n<br>采用“余数=被除数-商<em>除数”<br>result=x-x/b</em>b</li>
+</ol>
+<h1 id="使用-OllyDbg-从零开始-Cracking"><a href="#使用-OllyDbg-从零开始-Cracking" class="headerlink" title="使用 OllyDbg 从零开始 Cracking"></a>使用 OllyDbg 从零开始 Cracking</h1><h2 id="数制系统"><a href="#数制系统" class="headerlink" title="数制系统"></a>数制系统</h2><p>十六进制负数  </p>
+<p>从00000000<del>FFFFFFFF<br>正数：00000000</del>7FFFFFFF<br>负数：80000000~FFFFFFFF(-1)<br>在od左下角的commandbar可查询十六进制数的十进制值和对应的ASCII字符：<u>? [十六进制值]</u></p>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><h3 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h3><ol>
+<li><p>o，溢出标志<br>记录了有符号数运算的结果是否发生了溢出，如果发生溢出OF=1，如果没有OF=0  </p>
+</li>
+<li><p>p，奇偶标志<br>指令的结果用二进制表示时1的总数，如果为偶数PF=1，如果不为偶数PF=0</p>
+</li>
+<li><p>z，零标志<br>记录相关指令执行后结果是否为0，如果为0那么ZF=1，如果不为0那么ZF=0  </p>
+</li>
+<li><p>s，符号标志<br>运算结果为负设置为1，结果为正设置为0  </p>
+</li>
+<li><p>c，进位标志<br>记录了无符号运算的结果是否有向更高位的进位（9位），有置1，无置0  </p>
+</li>
+<li><p>其他</p>
+</li>
+</ol>
+<h1 id="python爬虫学习"><a href="#python爬虫学习" class="headerlink" title="python爬虫学习"></a>python爬虫学习</h1><p>还没放上来</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-03-29T07:03:39.858Z" itemprop="dateUpdated">2020-03-29 15:03:39</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://brubbish.github.io">
+            <img src="/img/avatar.jpg" alt="Bruce">
+            Bruce
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" rel="tag">加密与解密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%A8%E6%8A%A5/" rel="tag">周报</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/dcd92ddb.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2020.03.16-2020.03.22</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/232092d7.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2020.03.08-2020.03.15</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Bruce &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
