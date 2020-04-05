@@ -1,417 +1,608 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
-    
-<!-- Google Analytics -->
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-153514659-2', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-<!-- End Google Analytics -->
-
-
-    
-
-    
-
-
-
-    <meta charset="utf-8">
-    
-    <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4">
-    
-    
-    
-    
-    <title>2020.03.23-2020.03.29 | Brubbish&#39;s</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="周报,加密与解密">
-    <meta name="description" content="32位软件逆向技术控制语句条件设置指令（SETcc）条件设置指令的形式是“SETcc r&#x2F;m8”， r&#x2F;m8表示8位寄存器或单字节内存单元条件设置指令测试一些标志位，把结果记录的目标操作数中测试：  of（&#x3D;1溢出） zf（&#x3D;1操作后等于0&#x2F;相等） cf（&#x3D;1进位&#x2F;低于） cf、zf结合判断 sf（&#x3D;1操作后结果为负） pf（&#x3D;1，1个数为偶数） sf、of结合判断（&#x3D;1小于） zf（&#x3D;1或zf!">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4" />
+  
+  
+  <title>2020.03.23-2020.03.29 | Brubbish&#39;s</title>
+  <meta name="description" content="关于上周博客炸了的问题原因是两个_config.yml（可能还有其他文件吧）里所有缩进都不见了….不知道是为啥，就甩给vscode和格式化代码插件吧（….)然后，原来 .yml 要用缩进表示层级啊….嗯顺便换了个主题 64位软件逆向技术虚函数c++的三大核心机制是封装、继承、多态，虚函数是多态的一种体现。在逆向过程中，虚函数是一种还原面向对象代码的重要手段   虚表不同的类虚表不同，相同的类对象共">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.03.23-2020.03.29">
 <meta property="og:url" content="https://brubbish.github.io/50551.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
-<meta property="og:description" content="32位软件逆向技术控制语句条件设置指令（SETcc）条件设置指令的形式是“SETcc r&#x2F;m8”， r&#x2F;m8表示8位寄存器或单字节内存单元条件设置指令测试一些标志位，把结果记录的目标操作数中测试：  of（&#x3D;1溢出） zf（&#x3D;1操作后等于0&#x2F;相等） cf（&#x3D;1进位&#x2F;低于） cf、zf结合判断 sf（&#x3D;1操作后结果为负） pf（&#x3D;1，1个数为偶数） sf、of结合判断（&#x3D;1小于） zf（&#x3D;1或zf!">
+<meta property="og:description" content="关于上周博客炸了的问题原因是两个_config.yml（可能还有其他文件吧）里所有缩进都不见了….不知道是为啥，就甩给vscode和格式化代码插件吧（….)然后，原来 .yml 要用缩进表示层级啊….嗯顺便换了个主题 64位软件逆向技术虚函数c++的三大核心机制是封装、继承、多态，虚函数是多态的一种体现。在逆向过程中，虚函数是一种还原面向对象代码的重要手段   虚表不同的类虚表不同，相同的类对象共">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2020/03/22/8IMgHA.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCwqg.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCDaj.png">
-<meta property="og:image" content="https://s1.ax1x.com/2020/03/25/8xCBZQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/02/GGvR3D.png">
 <meta property="article:published_time" content="2020-03-29T12:06:00.000Z">
-<meta property="article:modified_time" content="2020-03-29T12:06:46.240Z">
+<meta property="article:modified_time" content="2020-04-05T06:48:22.946Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta property="article:tag" content="加密与解密">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/22/8IMgHA.png">
-    
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/04/02/GGvR3D.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://brubbish.github.io/50551.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Brubbish&#39;s" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-    <!-- custom head -->
-    
-
+  
+  
+  
+  
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-    <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/brubbish" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
         </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Bruce</h5>
-          <a href="mailto:BruceQiuu@outlook.com" title="BruceQiuu@outlook.com" class="mail">BruceQiuu@outlook.com</a>
-        </hgroup>
+        <h2 id="name" class="hidden-xs hidden-sm">Bruce</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Learner，Beginner</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Xiamen, China</small>
       </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
         
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
         
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
         
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
         
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/brubbish" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
         
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/brubbish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>这个人什么都没留下</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" rel="tag">加密与解密</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E6%8A%A5/" rel="tag">周报</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B1%87%E7%BC%96/" rel="tag">汇编</a><span class="tag-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/%E4%BD%9C%E4%B8%9A/" style="font-size: 13px;">作业</a> <a href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" style="font-size: 13.5px;">加密与解密</a> <a href="/tags/%E5%91%A8%E6%8A%A5/" style="font-size: 14px;">周报</a> <a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 13.5px;">汇编</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2099/12/">十二月 2099</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/710f8e5f.html" class="title">【置顶】python 爬虫学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2099-12-31T15:58:00.000Z" itemprop="datePublished">2099-12-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/50551.html" class="title">2020.03.23-2020.03.29</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-29T12:06:00.000Z" itemprop="datePublished">2020-03-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/50551.html" class="title">2020.03.23-2020.03.29</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-29T12:06:00.000Z" itemprop="datePublished">2020-03-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/dcd92ddb.html" class="title">2020.03.16-2020.03.22</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-22T04:57:00.000Z" itemprop="datePublished">2020-03-22</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/232092d7.html" class="title">2020.03.08-2020.03.15</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-14T16:00:00.000Z" itemprop="datePublished">2020-03-15</time>
+              </p>
+            </div>
+          </li>
+          
       </ul>
     </div>
   </div>
+  
+
+    
+  </div>
 </aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">2020.03.23-2020.03.29</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-    </div>
-</header>
-<header class="content-header post-header">
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于上周博客炸了的问题"><span class="toc-number">1.</span> <span class="toc-text">关于上周博客炸了的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#64位软件逆向技术"><span class="toc-number">2.</span> <span class="toc-text">64位软件逆向技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#虚函数"><span class="toc-number">2.1.</span> <span class="toc-text">虚函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚表"><span class="toc-number">2.1.1.</span> <span class="toc-text">虚表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#序列号（注册码）保护方式"><span class="toc-number">3.</span> <span class="toc-text">序列号（注册码）保护方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#序列号保护机制"><span class="toc-number">3.1.</span> <span class="toc-text">序列号保护机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#攻击序列号保护机制"><span class="toc-number">3.2.</span> <span class="toc-text">攻击序列号保护机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据约束性"><span class="toc-number">3.2.1.</span> <span class="toc-text">数据约束性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用消息断点"><span class="toc-number">3.2.2.</span> <span class="toc-text">利用消息断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用提示信息"><span class="toc-number">3.2.3.</span> <span class="toc-text">利用提示信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串比较形式"><span class="toc-number">3.3.</span> <span class="toc-text">字符串比较形式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#警告窗口"><span class="toc-number">4.</span> <span class="toc-text">警告窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#时间限制"><span class="toc-number">5.</span> <span class="toc-text">时间限制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#计时器"><span class="toc-number">5.1.</span> <span class="toc-text">计时器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间限制-1"><span class="toc-number">5.2.</span> <span class="toc-text">时间限制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象（OOP）涉及到的几个名词"><span class="toc-number">6.</span> <span class="toc-text">面向对象（OOP）涉及到的几个名词</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#类（class）-amp-对象"><span class="toc-number">6.1.</span> <span class="toc-text">类（class）&amp;对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-number">6.2.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚函数-1"><span class="toc-number">6.3.</span> <span class="toc-text">虚函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#虚函数表"><span class="toc-number">6.3.1.</span> <span class="toc-text">虚函数表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">6.4.</span> <span class="toc-text">封装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python-爬虫学习"><span class="toc-number">7.</span> <span class="toc-text">python 爬虫学习</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
 
-    <div class="container fade-scale">
-        <h1 class="title">2020.03.23-2020.03.29</h1>
-        <h5 class="subtitle">
-            
-                <time datetime="2020-03-29T12:06:00.000Z" itemprop="datePublished" class="page-time">
-  2020-03-29
-</time>
-
-
-            
-        </h5>
-    </div>
-
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2020-04-06-post" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2020.03.23-2020.03.29
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/50551.html" class="article-date">
+	  <time datetime="2020-03-29T12:06:00.000Z" itemprop="datePublished">2020-03-29</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" rel="tag">加密与解密</a>, <a class="article-tag-link" href="/tags/%E5%91%A8%E6%8A%A5/" rel="tag">周报</a>
+  </span>
 
 
-</header>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
 
 
-<div class="container body-wrap">
-    
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/50551.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.8k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 10(分)</span>
+	
 
-<article id="post-2020-03-29-post"
-  class="post-article article-type-post fade" itemprop="blogPost">
-
-    <div class="post-card">
-        <h1 class="post-card-title">2020.03.23-2020.03.29</h1>
-        <div class="post-meta">
-            <time class="post-time" title="2020-03-29 20:06:00" datetime="2020-03-29T12:06:00.000Z"  itemprop="datePublished">2020-03-29</time>
-
-            
-
-
-            
-
-        </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="32位软件逆向技术"><a href="#32位软件逆向技术" class="headerlink" title="32位软件逆向技术"></a>32位软件逆向技术</h1><h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><h3 id="条件设置指令（SETcc）"><a href="#条件设置指令（SETcc）" class="headerlink" title="条件设置指令（SETcc）"></a>条件设置指令（SETcc）</h3><p>条件设置指令的形式是“SET<u>cc</u> r/m8”， r/m8表示8位寄存器或单字节内存单元<br>条件设置指令测试一些标志位，把结果记录的目标操作数中<br>测试：</p>
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="关于上周博客炸了的问题"><a href="#关于上周博客炸了的问题" class="headerlink" title="关于上周博客炸了的问题"></a>关于上周博客炸了的问题</h1><p>原因是两个_config.yml（可能还有其他文件吧）里所有缩进都不见了….不知道是为啥，就甩给vscode和格式化代码插件吧（….)<br>然后，原来 .yml 要用缩进表示层级啊….<br>嗯顺便换了个主题</p>
+<h1 id="64位软件逆向技术"><a href="#64位软件逆向技术" class="headerlink" title="64位软件逆向技术"></a>64位软件逆向技术</h1><h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>c++的三大核心机制是封装、继承、多态，虚函数是多态的一种体现。在逆向过程中，虚函数是一种还原面向对象代码的重要手段  </p>
+<h3 id="虚表"><a href="#虚表" class="headerlink" title="虚表"></a>虚表</h3><p>不同的类虚表不同，相同的类对象共享一个虚表<br>（以下讲的是用c++写的程序）<br>在构造函数中，首先初始化虚表指针，然后初始化数据成员，最后返回this指针<br>c++语法规定，析构函数需要调用虚函数的无多态性，因此析构函数首先需要赋值虚表<br>构造函数和析构函数特征一致，可根据调用的先后顺序确定<br>虚表地址在全局数据区中  </p>
+<h1 id="序列号（注册码）保护方式"><a href="#序列号（注册码）保护方式" class="headerlink" title="序列号（注册码）保护方式"></a>序列号（注册码）保护方式</h1><h2 id="序列号保护机制"><a href="#序列号保护机制" class="headerlink" title="序列号保护机制"></a>序列号保护机制</h2><p>验证用户名和序列号之间的映射关系（….也有可能没有关系）<br>检查方法：  </p>
 <ol>
-<li>of（=1溢出）</li>
-<li>zf（=1操作后等于0/相等）</li>
-<li>cf（=1进位/低于）</li>
-<li>cf、zf结合判断</li>
-<li>sf（=1操作后结果为负）</li>
-<li>pf（=1，1个数为偶数）</li>
-<li>sf、of结合判断（=1小于）</li>
-<li>zf（=1或zf!=of，不大于）<blockquote>
-<p><a href="https://brubbish.github.io/34199.html#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8">https://brubbish.github.io/34199.html#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8</a></p>
-</blockquote>
-</li>
+<li>将用户名等信息通过变换后得到注册码<br>序列号=F（用户名）<br>这个方法计算出的序列号以明文形式在内存中出现<br>也可通过修改比较指令的方法通过检查<br>再现了生成注册码的过程，不安全  </li>
+<li>通过注册码验证用户名<br>生成注册码时：序列号=F（用户名），检查注册码时：用户名=F^（-1）（序列号）<br>生成注册码的函数和注册码明文未出现在软件代码中<br>破解可考虑：1.修改比较指令，2.通过F^(-1)找出F  </li>
+<li>通过对等函数检查<br>F1（用户名）=F2（序列号）<br>与2类似  </li>
+<li>同时将用户名和序列号作为自变量<br>特定值=F（用户名，序列号）<br>可能失去了用户名和序列号的一一对应关系</li>
 </ol>
-<p>条件设置指令可以用来消除程序中的转移指令<br>如：<br><img src="https://s1.ax1x.com/2020/03/22/8IMgHA.png" alt=" "></p>
-<h3 id="纯算法实现逻辑判断"><a href="#纯算法实现逻辑判断" class="headerlink" title="纯算法实现逻辑判断"></a>纯算法实现逻辑判断</h3><p>一些编译器在优化的时候，会不改变原逻辑的情况下，使用数学技巧把代码中的一些逻辑分支语句转换为算术操作，减少程序中的条件转移指令，提高cpu的流水线的性能（….tql)  </p>
-<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>可以进行反向引用<br>其他类型的分支语句，如if-else都是由低地址向高地址区域引用的（向下跳），依此可以将循环语句识别出来（调回去）<br>确定某段代码是循环代码后就可以分析计数器（一般用ecx）  </p>
-<p>如果编译时设置优化“Maximize Speed”：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xor ecx,ecx             ;变量初始化sum&#x3D;0</span><br><span class="line">xor eax,eax             ；变量初始化i&#x3D;0</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
-
-<h2 id="数学运算符"><a href="#数学运算符" class="headerlink" title="数学运算符"></a>数学运算符</h2><p>如果编译器没有进行优化，则这些运算符很容易理解（….)所以下面都是经过优化的</p>
-<h3 id="整数的加法和减法"><a href="#整数的加法和减法" class="headerlink" title="整数的加法和减法"></a>整数的加法和减法</h3><p>用lea代替add和sub<br>lea指令允许用户在一个时钟内完成对c=a+b+78h（某个数）的计算，其中abc都是在有寄存器的情况下才有效的，如：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lea c,[a+b+78]</span><br><span class="line">&#x3D;&gt;</span><br><span class="line">mov eax,dword ptr [esp]     ;eax&#x3D;a</span><br><span class="line">mov ecx,dword ptr [esp]     ;ecx&#x3D;b</span><br><span class="line">lea edx,dword ptr [ecx+eax+78]</span><br></pre></td></tr></table></figure>
+<h2 id="攻击序列号保护机制"><a href="#攻击序列号保护机制" class="headerlink" title="攻击序列号保护机制"></a>攻击序列号保护机制</h2><p>找到序列号或修改判断序列号后的跳转指令<br>跟踪程序启动时（需要将注册码读出并判断）或输入注册码，对api设置断点<br>常用：<br>将输入的内容复制到缓冲区|判断后显示的对话框|启动时读取注册码<br>-|-|-<br> GetWindowTextA(W)、GetDlgItemTextA(W)、GetDlgItemInt | MessageBoxA(W)、MessageBoxExA(W)、ShowWindow、MessageBoxIndirectA(W)、CreateDialogParamA(W)、CreateDialogIndirectParamA(w)、DialogBoxParamA(W)、DialogBoxIndirectParamA(W) |RegQueryValueExA(W)(序列号放在注册表);GetPrivateProfileStringA(W)、GetPrivateProfileIntA(W)、GetProfileIntA(W)、GetProfileStringA(W)(序列号放在INI文件中);CreateFileA(W)、_lopen()(放在一般文件)</p>
+<h3 id="数据约束性"><a href="#数据约束性" class="headerlink" title="数据约束性"></a>数据约束性</h3><p>只用在明文比较注册码的保护方式中使用。大多数情况下，真正的注册码会在某个时刻出现在内存中，一般会在用户输入的±90h。<br>例如，用od按’Alt+M’打开内存窗口，’Ctrl+B’打开搜索框，搜索输入的序列号，可在附近查找到真序列号  </p>
+<h3 id="利用消息断点"><a href="#利用消息断点" class="headerlink" title="利用消息断点"></a>利用消息断点</h3><p>按下和释放鼠标时会发送WM_LBUTTONDOWN和WM_LUBTTONUP消息，用这个消息下断点可以找到按钮的事件代码  </p>
+<h3 id="利用提示信息"><a href="#利用提示信息" class="headerlink" title="利用提示信息"></a>利用提示信息</h3><p>当输入错时提示“序列号错误，再来一次”等，可以查找相应的字符串，定位到相关代码<br>如od中，右键“search for”-&gt;“all referenced text string”</p>
+<h2 id="字符串比较形式"><a href="#字符串比较形式" class="headerlink" title="字符串比较形式"></a>字符串比较形式</h2><ol>
+<li>寄存器直接比较  </li>
+<li>函数比较<br>比较内容放在寄存器或栈中<br>call一个用于比较的函数，可能是api函数或自己写的  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">call ....</span><br><span class="line">test eax,eax      </span><br><span class="line">jz   ....      ;zf&#x3D;1-&gt;eax&#x3D;0 跳转</span><br></pre></td></tr></table></figure></li>
+<li>串比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lea edi [   ] ;edi指向字符串a</span><br><span class="line">lea esi [   ] ;....</span><br><span class="line">repz cmpsd    ;比较</span><br></pre></td></tr></table></figure>
+edi、esi：变址寄存器，存放存储单元在段内的偏移量。<br>rep：按ecx中指定次数或在zf不满足条件前重复。<br>如果ds:si和es:di所指向的两个字节相等，则继续比较。REP（重复）、REPE（相等时重复）、REPNE（不相等时重复）、REPZ（为零时重复）及 REPNZ（不为零时重复）<br><img src="https://s1.ax1x.com/2020/04/02/GGvR3D.png" alt=" "><br>CMPSB    比较字节  CMPSW    比较字  CMPSD    比较双字  ,方向标志位决定ESI和EDI的增加或减少</li>
+</ol>
+<h1 id="警告窗口"><a href="#警告窗口" class="headerlink" title="警告窗口"></a>警告窗口</h1><p>常用的方法是修改程序的资源、静态分析、动态分析<br>显示窗口的常用函数有MessageBoxA(W)、MessageBoxExA(W)、DialogBoxParamA(W)、ShowWindow、CreateWindowExA(W)等，对某些警告窗口无效时可以尝试利用消息设置断点拦截  </p>
+<h1 id="时间限制"><a href="#时间限制" class="headerlink" title="时间限制"></a>时间限制</h1><h2 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h2><p>对于限制每次运行时长的软件  </p>
+<ol>
+<li>setTimer函数<br>应用程序在初始化时调用这个api函数，申请计时器并设定时间间隔，同时获得一个处理计时器超时的回调函数。若超时，系统会向申请的窗口发送WM_TIMER或调用那个回调函数。当程序不需要计时器，调用KillTimer()进行销毁    </li>
+<li>高精度多媒体计时器<br>调用timeSetEvent()  </li>
+<li>其它<br>timeGetTime()、GetTickCount()，返回的都是系统启动以来经历过的时间，函数的精度取决于系统的设置；也可以利用各高级语言开发库里的函数实现计时，如c语言里的time()（返回1970.01.01 0时起至今的秒数）  </li>
+</ol>
+<p>精度太高会对系统性能造成影响，故一般不需要太高精度。</p>
+<h2 id="时间限制-1"><a href="#时间限制-1" class="headerlink" title="时间限制"></a>时间限制</h2><p>试用期<br>在安装软件或主程序第一次运行时获得系统日期并记录。程序每次运行都要去的当前系统日期并与之前的记录比较<br>软件一般最少要保存两个时间值，一个是安装（运行）日期（最好存在多个地方），一个是软件最近一次运行的日期（防止用户修改机器日期）<br>用于获取时间的api函数有GetSystemTime、GetLocalTime、GetFileTime，即使不直接使用这些函数，高级语言中封装的类也调用了这些函数。<br>还有一种方法是读取需要频繁修改的系统文件，利用FileTimeToSystem()  </p>
+<h1 id="面向对象（OOP）涉及到的几个名词"><a href="#面向对象（OOP）涉及到的几个名词" class="headerlink" title="面向对象（OOP）涉及到的几个名词"></a>面向对象（OOP）涉及到的几个名词</h1><p>主要是因为加密与解密里涉及到了（如虚函数）但不懂是啥．．．．</p>
+<h2 id="类（class）-amp-对象"><a href="#类（class）-amp-对象" class="headerlink" title="类（class）&amp;对象"></a>类（class）&amp;对象</h2><p>类是用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例<br>当我们定义一个class的时候，我们实际上就定义了一种数据类型。  </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">      <span class="comment">// 构造函数定义</span></span><br><span class="line">      Box(<span class="keyword">double</span> l=<span class="number">2.0</span>, <span class="keyword">double</span> b=<span class="number">2.0</span>, <span class="keyword">double</span> h=<span class="number">2.0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="built_in">cout</span> &lt;&lt;<span class="string">"Constructor called."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">         length = l;</span><br><span class="line">         breadth = b;</span><br><span class="line">         <span class="built_in">height</span> = h;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="function"><span class="keyword">double</span> <span class="title">Volume</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> length * breadth * <span class="built_in">height</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(Box box)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">this</span>-&gt;Volume() &gt; box.Volume();</span><br><span class="line">         <span class="comment">// 每一个对象都能通过this 指针访问自己的地址</span></span><br><span class="line">      &#125;</span><br><span class="line">   <span class="keyword">private</span>:             <span class="comment">//类成员的属性，还可为private 或 protected</span></span><br><span class="line">      <span class="keyword">double</span> length;   <span class="comment">// 盒子的长度</span></span><br><span class="line">      <span class="keyword">double</span> breadth;  <span class="comment">// 盒子的宽度</span></span><br><span class="line">      <span class="keyword">double</span> <span class="built_in">height</span>;   <span class="comment">// 盒子的高度</span></span><br><span class="line">&#125;;</span><br><span class="line">Box Box1;          <span class="comment">// 声明对象 Box1，类型为 Box</span></span><br><span class="line">Box Box2;          <span class="comment">// 声明对象 Box2，类型为 Box</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">构造函数：实现对象初始化  </span><br><span class="line">析构函数：释放对象占用的内存空间  </span><br><span class="line">类的作用：安全、继承  </span><br><span class="line"></span><br><span class="line">## 继承</span><br><span class="line">面向对象程序设计中最重要的一个概念是继承。继承允许我们依据一个类来定义另一个类，这使得创建和维护一个应用程序变得更容易。这样做，也达到了重用代码功能和提高执行效率的效果。  </span><br><span class="line">当创建一个类时，您不需要重新编写新的数据成员和成员函数，只需指定新建的类继承了一个已有的类的成员即可。这个已有的类称为基类、父类或超类，新建的类称为派生类或子类。  </span><br><span class="line">继承代表了 is a 关系。例如，哺乳动物是动物，狗是哺乳动物。  </span><br><span class="line">如果一个实例的数据类型是某个子类，那么它的数据类型也可以看作是父类</span><br><span class="line">```c++</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Shape</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">int</span> w)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">         <span class="built_in">width</span> = w;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">setHeight</span><span class="params">(<span class="keyword">int</span> h)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">         <span class="built_in">height</span> = h;</span><br><span class="line">      &#125;</span><br><span class="line">   <span class="keyword">protected</span>:</span><br><span class="line">      <span class="keyword">int</span> <span class="built_in">width</span>;</span><br><span class="line">      <span class="keyword">int</span> <span class="built_in">height</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PaintCost</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">getCost</span><span class="params">(<span class="keyword">int</span> area)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> area * <span class="number">70</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 派生类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">public</span> Shape</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">getArea</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123; </span><br><span class="line">         <span class="keyword">return</span> (<span class="built_in">width</span> * <span class="built_in">height</span>); </span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//多继承，即一个子类可以有多个父类，它继承了多个父类的特性</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">public</span> Shape, <span class="keyword">public</span> PaintCost</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">getwhatever</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123; </span><br><span class="line">         <span class="keyword">return</span> (<span class="built_in">width</span> * <span class="built_in">height</span> *<span class="built_in">height</span>); </span><br><span class="line">      &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态按字面的意思就是多种形态。存在的必要条件：继承、重写（子类对父类的方法做一定修改）、父类引用指向子类的对象<br>当子类和父类都存在相同的方法时，子类覆盖了父类的方法  </p>
 <blockquote>
-<p>时钟周期：一个时钟脉冲所需要的时间。（计组）</p>
+<p>对于一个变量，我们只需要知道它是Animal类型，无需确切地知道它的子类型，就可以放心地调用run()方法，而具体调用的run()方法是作用在Animal、Dog、Cat还是Tortoise对象上，由运行时该对象的确切类型决定，这就是多态真正的威力：调用方只管调用，不管细节，而当我们新增一种Animal的子类时，只要确保run()方法编写正确，不用管原来的代码是如何调用的。<a href="https://www.liaoxuefeng.com/wiki/897692888725344/923030507728352" target="_blank" rel="noopener">继承和多态</a></p>
 </blockquote>
-<h3 id="整数的乘法"><a href="#整数的乘法" class="headerlink" title="整数的乘法"></a>整数的乘法</h3><p>一般被编译成mul（无符号）、imul（有符号）指令（运行慢），为了提高效率会用其他指令完成<br>如果一个数是2的幂，用左移指令shl；3、5、6、7、9等数用加法提高效率：如把exa*5写成”lea eax,[eax+4 *4];lea指令可以实现寄存器乘以2、4、8的运算  </p>
-<h3 id="整数的除法"><a href="#整数的除法" class="headerlink" title="整数的除法"></a>整数的除法</h3><p>一般被编译成div、idiv指令，大概比乘法运算多消耗10倍cpu时钟<br>如果除数是2的幂，可用右移指令’shr a,n’：a是被除数，n是2的指数（进行无符号数计算）有符号数用sar指令  </p>
-<p>除法指令需要用到符号扩展指令cdq，作用是把eax中的数视为有符号数，将eax的最高位（符号位）扩展到edx中。如果eax最高位是1，执行后edx=FFFFFFFF;如果是0，edx=00000000。通过这种方法把32位有符号数变为edx：eax的64位有符号数，满足64位运算指令的需要。</p>
-<p>对除法优化时会用乘法代替除法，优化的公式较多，一例如：倒数相乘a*b=a *(1/b)</p>
-<p>（在下面的64位中描述更完整）</p>
-<h2 id="文本字符串"><a href="#文本字符串" class="headerlink" title="文本字符串"></a>文本字符串</h2><h3 id="字符寻址指令"><a href="#字符寻址指令" class="headerlink" title="字符寻址指令"></a>字符寻址指令</h3><p>与字符指针处理相关的指令有mov、lea等<br>mov指令将地址/寄存器中的数据放到目的寄存器中，如mov eax [401000]/[ecx]<br>lea（load effective address）操作数是地址,lea eax,[addr] 就是把addr的地址放入eax中  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lea eax,[401000]</span><br><span class="line">等价于</span><br><span class="line">mov eax,401000</span><br></pre></td></tr></table></figure>
-<h3 id="计算字符串长度"><a href="#计算字符串长度" class="headerlink" title="计算字符串长度"></a>计算字符串长度</h3><p>c语言的strlen()：</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://s1.ax1x.com/2020/03/25/8xCwqg.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h1 id="64位软件逆向技术"><a href="#64位软件逆向技术" class="headerlink" title="64位软件逆向技术"></a>64位软件逆向技术</h1><p>x64通用寄存器的名称第一个字母由e改为r，共16个；16个128位xmm寄存器（通常用于优化代码）</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://s1.ax1x.com/2020/03/25/8xCDaj.png" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="栈平衡"><a href="#栈平衡" class="headerlink" title="栈平衡"></a>栈平衡</h3><p>每8字节的栈空间用来保存一个数据<br>尽量保证栈顶对齐值为16（可以被16整除）</p>
-<h3 id="调用约定"><a href="#调用约定" class="headerlink" title="调用约定"></a>调用约定</h3><p>x86（32位）的函数调用有stdcall、__cdecl、fastcall等，x64只有一种寄存器快速调用约定：  </p>
-<ol>
-<li>整数：前四个参数用寄存器rcx→rdx→r8→r9，其余放在栈里，入栈顺序从右到左，任何大于8字节或不是1、2、4、8字节的参数用地址传递</li>
-<li>浮点数：前四个参数用xmm寄存器完成：xmm0→xmm1→xmm2→xmm3  </li>
-</ol>
-<p><img src="https://s1.ax1x.com/2020/03/25/8xCBZQ.png" alt=" "></p>
-<p>栈为函数的前四个参数预留了32字节的空间，当函数功能复杂时将寄存器的参数保存到这个预留栈空间。预览栈空间由函数调用者申请、平衡  </p>
-<h2 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h2><h3 id="整数的除法-1"><a href="#整数的除法-1" class="headerlink" title="整数的除法"></a>整数的除法</h3><ol>
-<li>有符号数，除数为2^n<br>x&gt;=0,x/2^n=x&gt;&gt;n<br>x&lt;0,x/2^n=（x+（2^n-1））&gt;&gt;n<br>除数为-2^n时最后用’neg 寄存器’指令求补  </li>
-<li>有符号数，除数为正，非2^n<br>32位：x&gt;=0,result=(x<em>c&gt;&gt;32)+x&gt;&gt;n,&lt;0时结果再+1<br>64位：x&gt;=0,result=(x</em>c&gt;&gt;64)+x&gt;&gt;n,&lt;0时结果再+1  </li>
-<li>有符号数，除数为负，非2^n<br>32位：x&gt;=0,result=(x<em>c&gt;&gt;32)-x&gt;&gt;n,&lt;0时结果再+1<br>64位：x&gt;=0,result=(x</em>c&gt;&gt;64)-x&gt;&gt;n,&lt;0时结果再+1  </li>
-</ol>
-<ul>
-<li>c为魔数  </li>
-</ul>
-<ol start="4">
-<li>无符号数，除数位2^n<br>用shr右移</li>
-<li>无符号数，除数非2^n<br>32位：x&gt;=0,result=x<em>c&gt;&gt;32&gt;&gt;n<br>62位：x&gt;=0,result=x</em>c&gt;&gt;62&gt;&gt;n</li>
-</ol>
-<h2 id="整数取模"><a href="#整数取模" class="headerlink" title="整数取模"></a>整数取模</h2><p>可以用除法指令，但是除法指令执行周期较长，通常优化将其转换成位运算或除法运算，再用除法运算进行优化  </p>
-<ol>
-<li>除数b=2^n<br>取得被除数二进制数的最后n位，负数要在n位之前补1：<br>x&gt;=0,result=x&amp;(b-1);x&lt;0,result=(x&amp;(b-1))-1|(~b-1)+1</li>
-<li>除数b!=2^n<br>采用“余数=被除数-商<em>除数”<br>result=x-x/b</em>b</li>
-</ol>
-<h1 id="使用-OllyDbg-从零开始-Cracking"><a href="#使用-OllyDbg-从零开始-Cracking" class="headerlink" title="使用 OllyDbg 从零开始 Cracking"></a>使用 OllyDbg 从零开始 Cracking</h1><h2 id="数制系统"><a href="#数制系统" class="headerlink" title="数制系统"></a>数制系统</h2><p>十六进制负数  </p>
-<p>从00000000<del>FFFFFFFF<br>正数：00000000</del>7FFFFFFF<br>负数：80000000~FFFFFFFF(-1)<br>在od左下角的commandbar可查询十六进制数的十进制值和对应的ASCII字符：<u>? [十六进制值]</u></p>
-<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><h3 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h3><ol>
-<li><p>o，溢出标志<br>记录了有符号数运算的结果是否发生了溢出，如果发生溢出OF=1，如果没有OF=0  </p>
-</li>
-<li><p>p，奇偶标志<br>指令的结果用二进制表示时1的总数，如果为偶数PF=1，如果不为偶数PF=0</p>
-</li>
-<li><p>z，零标志<br>记录相关指令执行后结果是否为0，如果为0那么ZF=1，如果不为0那么ZF=0  </p>
-</li>
-<li><p>s，符号标志<br>运算结果为负设置为1，结果为正设置为0  </p>
-</li>
-<li><p>c，进位标志<br>记录了无符号运算的结果是否有向更高位的进位（9位），有置1，无置0  </p>
-</li>
-<li><p>其他</p>
-</li>
-</ol>
-<h1 id="python爬虫学习"><a href="#python爬虫学习" class="headerlink" title="python爬虫学习"></a>python爬虫学习</h1><p><a href="https://brubbish.github.io/710f8e5f.html">https://brubbish.github.io/710f8e5f.html</a></p>
+<h2 id="虚函数-1"><a href="#虚函数-1" class="headerlink" title="虚函数"></a>虚函数</h2><p>C++中的虚函数的作用主要是实现了多态的机制。基类定义虚函数，子类可以重写该函数；在派生类中对基类定义的虚函数进行重写时，需要在派生类中声明该方法为虚方法。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span>        </span></span><br><span class="line"><span class="function">    <span class="comment">//这里的foo()也可以啥都不输出，即virtual void foo();</span></span></span><br><span class="line"><span class="function">    <span class="comment">//如果写为virtual void foo()=0 则为一个纯虚函数，仅提供一个接口，在继承时必须实现</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"A::foo() is called"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span><span class="keyword">public</span> A</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"B::foo() is called"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    A *a = <span class="keyword">new</span> B();</span><br><span class="line">    a-&gt;foo();   <span class="comment">// 在这里，a虽然是指向A的指针，但是被调用的函数(foo)却是B的!</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
+<p>带有纯虚函数的类称为抽象类，只能作为基类，且不能定义对象（抽象类这边还涉及到了abstract和virtual，但先不管了….）</p>
+<h3 id="虚函数表"><a href="#虚函数表" class="headerlink" title="虚函数表"></a>虚函数表</h3><p>编译器处理虚函数的方法是：为每个类对象添加一个隐藏成员，隐藏成员中保存了一个指向函数地址数组的指针，称为虚表指针，这种数组成为虚函数表。即，每个类使用一个虚函数表，每个类对象用一个虚表指针。</p>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>把数据和函数捆绑在一起。<br>通过创建类来进行封装和数据隐藏（public、protected、private）。默认情况下，类中定义的项目都是私有的，再提供对外public的接口</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adder</span>&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="comment">// 构造函数</span></span><br><span class="line">      Adder(<span class="keyword">int</span> i = <span class="number">0</span>)</span><br><span class="line">      &#123;</span><br><span class="line">        total = i;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 对外的接口</span></span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">addNum</span><span class="params">(<span class="keyword">int</span> number)</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          total += number;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 对外的接口</span></span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">getTotal</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> total;</span><br><span class="line">      &#125;;</span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="comment">// 对外隐藏的数据</span></span><br><span class="line">      <span class="keyword">int</span> total;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        <blockquote class="post-copyright">
-    
-    <div class="content">
-        
-<span class="post-time">
-    最后更新时间：<time datetime="2020-03-29T12:06:46.240Z" itemprop="dateUpdated">2020-03-29 20:06:46</time>
-</span><br>
+<h1 id="python-爬虫学习"><a href="#python-爬虫学习" class="headerlink" title="python 爬虫学习"></a>python 爬虫学习</h1><p><a href="https://brubbish.github.io/710f8e5f.html#RE库的match对象">https://brubbish.github.io/710f8e5f.html#RE库的match对象</a></p>
 
-
-        
+      
     </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-    <footer>
-        <a href="https://brubbish.github.io">
-            <img src="/img/avatar.jpg" alt="Bruce">
-            Bruce
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://brubbish.github.io/50551.html" title="2020.03.23-2020.03.29" target="_blank" rel="external">https://brubbish.github.io/50551.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/brubbish" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
         </a>
-    </footer>
-</blockquote>
-
-        
-
-
-        <div class="post-footer">
-            
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" rel="tag">加密与解密</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%A8%E6%8A%A5/" rel="tag">周报</a></li></ul>
-
-
-            
-
-
-        </div>
-    </div>
-
-    
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/710f8e5f.html" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">【置顶】python 爬虫学习</h4>
-      </a>
-    </div>
-  
-
-  
-    <div class="waves-block waves-effect next">
-      <a href="/dcd92ddb.html" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">2020.03.16-2020.03.22</h4>
-      </a>
-    </div>
-  
-</nav>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</article>
-
-
-
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/brubbish" target="_blank"><span class="text-dark">Bruce</span><small class="ml-1x">Learner，Beginner</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
 </div>
 
-        <footer class="footer">
-    <div class="top">
-        
 
-        <p>
-            
-            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
-        </p>
     </div>
-    <div class="bottom">
-        <p><span>Bruce &copy; 2020</span>
-            <span>
-                
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/50551.html" title="2020.03.23-2020.03.29"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/dcd92ddb.html" title="2020.03.16-2020.03.22"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/brubbish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2020 Bruce
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
     </div>
 </footer>
-
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
-
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: false, REWARD: false };
-
-
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+<script src="/js/plugin.min.js"></script>
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</template>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+<script src="/js/application.js"></script>
 
 
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
 
 
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+    <script defer type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-153514659-2', 'auto');
+ga('send', 'pageview');
+
+</script>
 
 
 
