@@ -20,12 +20,12 @@
   
   
   <title>2020.01.19-2020.02.02 | Brubbish&#39;s</title>
-  <meta name="description" content="##1.用 github 搞了博客参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F;并用了他的模板….页面还没改完 ##2.汇编语言学习 ####[BX]和 loop 指令一次执行完循环的过程：g 指令：“g0012”从当前的 cs：ip 指向的指令执行，一直到（ip）&#x3D;0012 为止p 指令：直到（cx）&#x3D;0 为止 ####段前缀：在访问内存单元的指">
+  <meta name="description" content="##1.用 github 搞了博客 参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F; 并用了他的模板… 页面还没改完 ##2.汇编语言学习 ####[BX]和 loop 指令 一次执行完循环的过程： g 指令： “g0012”从当前的 cs：ip 指向的指令执行，一直到（ip）&#x3D;0012 为止 p 指令： 直到（cx）&#x3D;0 为止 ####段前缀： 在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2020.01.19-2020.02.02">
 <meta property="og:url" content="https://brubbish.github.io/17577.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
-<meta property="og:description" content="##1.用 github 搞了博客参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F;并用了他的模板….页面还没改完 ##2.汇编语言学习 ####[BX]和 loop 指令一次执行完循环的过程：g 指令：“g0012”从当前的 cs：ip 指向的指令执行，一直到（ip）&#x3D;0012 为止p 指令：直到（cx）&#x3D;0 为止 ####段前缀：在访问内存单元的指">
+<meta property="og:description" content="##1.用 github 搞了博客 参考：https:&#x2F;&#x2F;www.fast.ai&#x2F;2020&#x2F;01&#x2F;16&#x2F;fast_template&#x2F; 并用了他的模板… 页面还没改完 ##2.汇编语言学习 ####[BX]和 loop 指令 一次执行完循环的过程： g 指令： “g0012”从当前的 cs：ip 指向的指令执行，一直到（ip）&#x3D;0012 为止 p 指令： 直到（cx）&#x3D;0 为止 ####段前缀： 在">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-02T08:26:22.000Z">
 <meta property="article:modified_time" content="2020-03-30T05:28:36.052Z">
@@ -306,6 +306,15 @@
 
   
   
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      
+    </nav>
+  </div>
+</aside>
+
 <main class="main" role="main">
   <div class="content">
   <article id="post-2020-02-02-post" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -347,7 +356,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/17577.html#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 766(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 790(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -357,18 +366,97 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>##1.用 github 搞了博客<br>参考：<a href="https://www.fast.ai/2020/01/16/fast_template/" target="_blank" rel="noopener">https://www.fast.ai/2020/01/16/fast_template/</a><br>并用了他的模板….<br>页面还没改完</p>
-<p>##2.汇编语言学习 ####[BX]和 loop 指令<br>一次执行完循环的过程：<br>g 指令：<br>“g0012”从当前的 cs：ip 指向的指令执行，一直到（ip）=0012 为止<br>p 指令：<br>直到（cx）=0 为止 ####段前缀：<br>在访问内存单元的指令中显式低给出内存单元段地址所在的段寄存器，如：<br>movax,ds:[bx]<br>movax,cs:[bx]<br>movax,ss,[bx]<br>movax,ex,[0]<br>…. ####在代码段中使用数据<br>codesegment<br>“dw0123，0456”<br>….<br>dw 的含义是定义字型数据，因为用 dw 定义的数据出于代码段的最开始，所以偏移地址为 0，这两个数据就在代码段的偏移 0，2 处，地址为 cs:0,cs:2 ####将数、代码、栈放入不同的段<br>一个段的容量不能大于 64kb（8086 模式的限制）</p>
+        <p>##1.用 github 搞了博客<br />
+参考：<a href="https://www.fast.ai/2020/01/16/fast_template/" target="_blank" rel="noopener">https://www.fast.ai/2020/01/16/fast_template/</a><br />
+并用了他的模板…<br />
+页面还没改完</p>
+<p>##2.汇编语言学习 ####[BX]和 loop 指令<br />
+一次执行完循环的过程：<br />
+g 指令：<br />
+“g0012”从当前的 cs：ip 指向的指令执行，一直到（ip）=0012 为止<br />
+p 指令：<br />
+直到（cx）=0 为止 ####段前缀：<br />
+在访问内存单元的指令中显式低给出内存单元段地址所在的段寄存器，如：<br />
+movax,ds:[bx]<br />
+movax,cs:[bx]<br />
+movax,ss,[bx]<br />
+movax,ex,[0]<br />
+… ####在代码段中使用数据<br />
+codesegment<br />
+“dw0123，0456”<br />
+…<br />
+dw 的含义是定义字型数据，因为用 dw 定义的数据出于代码段的最开始，所以偏移地址为 0，这两个数据就在代码段的偏移 0，2 处，地址为 cs:0,cs:2 ####将数、代码、栈放入不同的段<br />
+一个段的容量不能大于 64kb（8086 模式的限制）</p>
 <blockquote>
-<p>assumecs:code,ds:data,ss:stack<br>datasegment</p>
+<p>assumecs:code,ds:data,ss:stack<br />
+datasegment</p>
 </blockquote>
-<pre><code>dw0123h,0456h,0789h,0abch,0defh,0cbah,0987h</code></pre><p>dataends<br>stacksegment<br>dw0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0<br>stackends<br>codesegment<br>start:movax,==stack==<br>movss,ax<br>movsp:20h<br>movax,==data==;将名称为 data 的段的段地址送入 ax（数值）<br>movds,ax<br>movbx,0<br>movcx,8<br>s: push[bx]<br>addbx,2<br>loops<br>movbx,0<br>movcx,8<br>s0: pop[bx]<br>addbx,2<br>loops0<br>movax,4c00h<br>int21h<br>codeends<br>endstart</p>
-<p>####and 和 or 指令<br>and：按位进行与运算<br>moval，01100011B<br>andal，001111011B<br>or：按位进行或运算<br>…<br>oral，00111011B</p>
-<p>####以字符形式给出的数据<br>用’….’的方式指明数据是以字符形式给出的，编译器将把它们转化为对应的 ascii 码<br>db’unix’相当于 db75h,6eh,49h,58h(ascii 码)</p>
-<p>####[bx+idata]<br>movax,[200+bx]==movax,[bx+200]==movax,200[bx]==movax,[bx].200<br>(ax)=((ds)*16+(bx)+200)<br>用[bx+idata]的方式进行数组的处理</p>
-<p>####SI、DI<br>是和 bx 功能相近的寄存器，不能够分成两个 8 位寄存器来使用<br>可以使用[bx+si+idata]和[bx+di+idata]的方式表示内存单元，不能用[si+di]<br>####BP<br>在 8086cpu 中只有 si、di、bp、bx 四个寄存器能在[….]里进行内存单元的寻址<br>四个寄存器可以单个出现或只能出现：bx+si;bx+di;bp+si;bp+di。bx+b；si+di 是错的<br>只要使用了 bp 而没有给出段地址，段地址就默认在 ss 中 ####数据位置的表达 1.直接用立即数 idata 表示：movax,1；moval,’a’ 2.将数据存在寄存器中 3.要处理的数据在内存中，可用[…]的格式给出 EA,SA 在某个段寄存器中<br>-1.movax,[bx+si+8]中段地址默认在 ds 中<br>-2.movax,[bp+si+8]中段地址默认在 ss 中 -存放段地址的寄存器也可以显性给出：movax,ds:[bx+si+8]</p>
-<p>#####指令要处理的数据的尺寸<br>-1.通过寄存器名指明：ax 字，al/ah 字节<br>-2.用操作符_word/byte__ptr<br>incwordptr[bx]<br>addbyteptr[bx],2<br>否则 cpu 无法得知要访问的单元是字单元还是字节单元<br>-3.其他<br>如 push,[1000]</p>
-<p>###寄存器整理<br>####bx、si、di、bp：<br>不使用 bp 时段地址默认在 ds 中<br>使用 bp 时段地址默认在 ss 中<br>####dx：累加寄存器<br>####cs：代码<br>####ss:sp：栈顶<br>####ds：数据<br>####cx：loop</p>
+<pre><code>dw0123h,0456h,0789h,0abch,0defh,0cbah,0987h
+</code></pre>
+<p>dataends<br />
+stacksegment<br />
+dw0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0<br />
+stackends<br />
+codesegment<br />
+start:movax,<mark>stack</mark><br />
+movss,ax<br />
+movsp:20h<br />
+movax,<mark>data</mark>;将名称为 data 的段的段地址送入 ax（数值）<br />
+movds,ax<br />
+movbx,0<br />
+movcx,8<br />
+s: push[bx]<br />
+addbx,2<br />
+loops<br />
+movbx,0<br />
+movcx,8<br />
+s0: pop[bx]<br />
+addbx,2<br />
+loops0<br />
+movax,4c00h<br />
+int21h<br />
+codeends<br />
+endstart</p>
+<p>####and 和 or 指令<br />
+and：按位进行与运算<br />
+moval，01100011B<br />
+andal，001111011B<br />
+or：按位进行或运算<br />
+…<br />
+oral，00111011B</p>
+<p>####以字符形式给出的数据<br />
+用’…'的方式指明数据是以字符形式给出的，编译器将把它们转化为对应的 ascii 码<br />
+db’unix’相当于 db75h,6eh,49h,58h(ascii 码)</p>
+<p>####[bx+idata]<br />
+movax,[200+bx]==movax,[bx+200]==movax,200[bx]==movax,[bx].200<br />
+(ax)=((ds)*16+(bx)+200)<br />
+用[bx+idata]的方式进行数组的处理</p>
+<p>####SI、DI<br />
+是和 bx 功能相近的寄存器，不能够分成两个 8 位寄存器来使用<br />
+可以使用[bx+si+idata]和[bx+di+idata]的方式表示内存单元，不能用[si+di]<br />
+####BP<br />
+在 8086cpu 中只有 si、di、bp、bx 四个寄存器能在[…]里进行内存单元的寻址<br />
+四个寄存器可以单个出现或只能出现：bx+si;bx+di;bp+si;bp+di。bx+b；si+di 是错的<br />
+只要使用了 bp 而没有给出段地址，段地址就默认在 ss 中 ####数据位置的表达 1.直接用立即数 idata 表示：movax,1；moval,‘a’ 2.将数据存在寄存器中 3.要处理的数据在内存中，可用[…]的格式给出 EA,SA 在某个段寄存器中<br />
+-1.movax,[bx+si+8]中段地址默认在 ds 中<br />
+-2.movax,[bp+si+8]中段地址默认在 ss 中 -存放段地址的寄存器也可以显性给出：movax,ds:[bx+si+8]</p>
+<p>#####指令要处理的数据的尺寸<br />
+-1.通过寄存器名指明：ax 字，al/ah 字节<br />
+-2.用操作符_word/byte__ptr<br />
+incwordptr[bx]<br />
+addbyteptr[bx],2<br />
+否则 cpu 无法得知要访问的单元是字单元还是字节单元<br />
+-3.其他<br />
+如 push,[1000]</p>
+<p>###寄存器整理<br />
+####bx、si、di、bp：<br />
+不使用 bp 时段地址默认在 ds 中<br />
+使用 bp 时段地址默认在 ss 中<br />
+####dx：累加寄存器<br />
+####cs：代码<br />
+####ss:sp：栈顶<br />
+####ds：数据<br />
+####cx：loop</p>
 
       
     </div>
@@ -433,6 +521,15 @@
       <a href="/19661.html" title="2020.01.12-2020.01.18"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
     
   </ul>
   
