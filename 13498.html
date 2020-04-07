@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4" />
+  
+  
+  <title>课设-药店管理系统 | Brubbish&#39;s</title>
+  <meta name="description" content="（为了避免又发生某种奇怪的错误导致程序突然变成了前几个小时保存的版本，还是做完后把它弄到这来好了） 一个功能简单的管理系统，包含了menu()里的功能以及登录、注册和称不上加密的加密 尝试使用了system(“pause”)、system(“cls”)以及把黑框弄成白框的system(“color 70”) 123456789101112131415161718192021222324252627">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课设-药店管理系统">
+<meta property="og:url" content="https://brubbish.github.io/13498.html">
+<meta property="og:site_name" content="Brubbish&#39;s">
+<meta property="og:description" content="（为了避免又发生某种奇怪的错误导致程序突然变成了前几个小时保存的版本，还是做完后把它弄到这来好了） 一个功能简单的管理系统，包含了menu()里的功能以及登录、注册和称不上加密的加密 尝试使用了system(“pause”)、system(“cls”)以及把黑框弄成白框的system(“color 70”) 123456789101112131415161718192021222324252627">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-23T11:33:22.000Z">
+<meta property="article:modified_time" content="2020-03-30T05:28:40.672Z">
+<meta property="article:author" content="Bruce">
+<meta property="article:tag" content="作业">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://brubbish.github.io/13498.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Brubbish&#39;s" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/brubbish" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Bruce</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Learner，Beginner</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Xiamen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/brubbish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>这个人什么都没留下</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/710f8e5f.html" class="title">【置顶】python 爬虫学习</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2099-12-31T15:58:00.000Z" itemprop="datePublished">2099-12-31</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/51835.html" class="title">2020.04.06-2020.04.12</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-04-12T04:10:30.000Z" itemprop="datePublished">2020-04-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/50551.html" class="title">2020.03.23-2020.03.29</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-29T12:06:00.000Z" itemprop="datePublished">2020-03-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/50551.html" class="title">2020.03.30-2020.04.05</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-29T12:06:00.000Z" itemprop="datePublished">2020-03-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/dcd92ddb.html" class="title">2020.03.16-2020.03.22</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-22T04:57:00.000Z" itemprop="datePublished">2020-03-22</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2020-02-23-post2" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      课设-药店管理系统
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/13498.html" class="article-date">
+	  <time datetime="2020-02-23T11:33:22.000Z" itemprop="datePublished">2020-02-23</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/13498.html#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.8k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>（为了避免又发生某种奇怪的错误导致程序突然变成了前几个小时保存的版本，还是做完后把它弄到这来好了）<br />
+一个功能简单的管理系统，包含了menu()里的功能以及登录、注册和称不上加密的加密</p>
+<p>尝试使用了system(“pause”)、system(“cls”)以及把黑框弄成白框的system(“color 70”)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;conio.h&gt;</span></span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">用于测试数据： </span></span><br><span class="line"><span class="comment">1234 哇 123 处 2000 2029 10</span></span><br><span class="line"><span class="comment">2344 吃 232 非 1234 2099 1</span></span><br><span class="line"><span class="comment">1233 啊 1234 非 2019 2020 2</span></span><br><span class="line"><span class="comment">1239 非 129 处 2001 2021 13</span></span><br><span class="line"><span class="comment">1342 哦哦、 23 处 2011 2022 13</span></span><br><span class="line"><span class="comment">3244 ·· 243 非 2011 2021 2 </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">med</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> elecode;<span class="comment">//编码</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">10</span>];<span class="comment">// 药品名称</span></span><br><span class="line">	<span class="keyword">double</span> price;<span class="comment">//价格</span></span><br><span class="line">	<span class="keyword">char</span> type[<span class="number">5</span>];<span class="comment">// 药品类型</span></span><br><span class="line">	<span class="keyword">int</span> prod;<span class="comment">//生产日期(年)</span></span><br><span class="line">	<span class="keyword">int</span> shelf;<span class="comment">//保质期(年)</span></span><br><span class="line">	<span class="keyword">int</span> stock;<span class="comment">//库存</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">med</span>* <span class="title">next</span>;</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">med</span> *<span class="title">p</span>;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">menu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"欢迎使用本管理系统\n"</span> </span><br><span class="line">			<span class="string">"选择一项功能:\n"</span></span><br><span class="line">	       <span class="string">"1.录入信息\n"</span></span><br><span class="line">	       <span class="string">"2.打印信息\n"</span></span><br><span class="line">	       <span class="string">"3.保存信息\n"</span></span><br><span class="line">	       <span class="string">"4.读取信息\n"</span></span><br><span class="line">	       <span class="string">"5.统计药品总数\n"</span></span><br><span class="line">	       <span class="string">"6.查找符合条件的药品\n"</span></span><br><span class="line">	       <span class="string">"7.修改信息\n"</span></span><br><span class="line">	       <span class="string">"8.删除信息\n"</span></span><br><span class="line">	       <span class="string">"9.退出\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(struct med *p)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sum</span><span class="params">(struct med *p)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">(struct med *p)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(struct med *p)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(struct med *p)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">user</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	system(<span class="string">"color 70"</span>);</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">while</span>(user()!=<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">		menu();</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">switch</span>(n) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:<span class="comment">//录入</span></span><br><span class="line">				build();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:<span class="comment">//打印</span></span><br><span class="line">				<span class="built_in">print</span>(p);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>:<span class="comment">//保存</span></span><br><span class="line">				save(p);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>:<span class="comment">//读取</span></span><br><span class="line">				<span class="built_in">read</span>();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">5</span>:<span class="comment">//统计人数</span></span><br><span class="line">				sum(p);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">6</span>:<span class="comment">//查找</span></span><br><span class="line">				<span class="built_in">find</span>(p);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">7</span>:<span class="comment">//修改</span></span><br><span class="line">				modify(p);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">8</span>:<span class="comment">//删除</span></span><br><span class="line">				<span class="built_in">remove</span>();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">default</span>:</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"Wrong num\n"</span>);</span><br><span class="line">				getchar();</span><br><span class="line">				getchar();</span><br><span class="line">				system(<span class="string">"cls"</span>);</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">user</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"欢迎使用本系统，请先注册或登录：\n"</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"1.注册/2.登录："</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">char</span> id[<span class="number">10</span>],pass[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入:用户名  密码:  (均只能为小于8位的字母或数字)"</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s %s"</span>,id,pass);</span><br><span class="line">		FILE* fp;</span><br><span class="line">		fp = fopen(<span class="string">".\\userinfo.txt"</span>, <span class="string">"a"</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; id[i]!=<span class="string">'\0'</span>; i++) &#123;</span><br><span class="line">			id[i]+=<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; pass[i]!=<span class="string">'\0'</span>; i++) &#123;</span><br><span class="line">			pass[i]+=<span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">fprintf</span>(fp,<span class="string">"%s "</span>,id);</span><br><span class="line">		<span class="built_in">fprintf</span>(fp,<span class="string">"%s "</span>,pass);</span><br><span class="line">		fclose(fp);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"保存成功\n"</span>);</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">		system(<span class="string">"cls"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">2</span>) &#123;</span><br><span class="line">		FILE *fp;</span><br><span class="line">		fp=fopen(<span class="string">".\\userinfo.txt"</span>,<span class="string">"r"</span>);</span><br><span class="line">		<span class="keyword">if</span>(fp==<span class="literal">NULL</span>) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"还未注册过"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"输入用户名: "</span>);</span><br><span class="line">			<span class="keyword">char</span> a[<span class="number">10</span>],b[<span class="number">10</span>];</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>,a);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; a[i]!=<span class="string">'\0'</span>; i++) &#123;</span><br><span class="line">				a[i]+=<span class="number">2</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"输入密码："</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> g=<span class="number">0</span>; g&lt;<span class="number">10</span>; g++) &#123;</span><br><span class="line">				b[g]=getch();</span><br><span class="line">				<span class="keyword">if</span> (b[g]==<span class="string">'\x0d'</span>) &#123;</span><br><span class="line">					b[g]=<span class="string">'\0'</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				b[g]=b[g]+<span class="number">2</span>;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"*"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">while</span>(<span class="built_in">fscanf</span>(fp,<span class="string">"%s"</span>,id)==<span class="number">1</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">strcmp</span>(id,a)==<span class="number">0</span>) &#123;</span><br><span class="line">					<span class="built_in">fscanf</span>(fp,<span class="string">"%s"</span>,pass);</span><br><span class="line">					<span class="keyword">if</span>(<span class="built_in">strcmp</span>(pass,b)==<span class="number">0</span>) &#123;</span><br><span class="line">						<span class="built_in">printf</span>(<span class="string">"正在进入管理系统...."</span>);</span><br><span class="line">						system(<span class="string">"pause"</span>);</span><br><span class="line">						system(<span class="string">"cls"</span>);</span><br><span class="line">						<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"用户名或密码错误"</span>);</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">			system(<span class="string">"cls"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">med</span> *<span class="title">head</span>=<span class="title">NULL</span>,*<span class="title">nextp</span>;</span></span><br><span class="line">	<span class="keyword">if</span>(p!=<span class="literal">NULL</span>) &#123;</span><br><span class="line">		head=p;</span><br><span class="line">		<span class="keyword">while</span>(head-&gt;next!=<span class="literal">NULL</span>) &#123;</span><br><span class="line">			head=head-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"顺序输入药品的：编码  名称 价格 药品类型（处方药/非处方药） 生产日期（年） 保质期（年） 库存，-1结束\n"</span>);</span><br><span class="line">	nextp=(struct med*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct med));</span><br><span class="line">	nextp-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;nextp-&gt;elecode);</span><br><span class="line">	<span class="keyword">while</span>(nextp-&gt;elecode!=<span class="number">-1</span>) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s %lf %s %d %d %d"</span>,nextp-&gt;name,&amp;nextp-&gt;price,nextp-&gt;type,&amp;nextp-&gt;prod,&amp;nextp-&gt;shelf,&amp;nextp-&gt;stock);</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">NULL</span>) &#123;</span><br><span class="line">			p=nextp;</span><br><span class="line">			head=p;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			head-&gt;next=nextp;</span><br><span class="line">			head=head-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">		nextp=(struct med*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct med));</span><br><span class="line">		nextp-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;nextp-&gt;elecode);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"成功录入,按回车返回"</span>);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(struct med *p)</span> </span>&#123;	</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"编码     名称   价格    药品类型 生产日期（年） 保质期（年） 库存\n"</span>);</span><br><span class="line">	<span class="keyword">while</span>(p) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d     %s     %.2lf %5s %10d %10d %14d\n"</span>,p-&gt;elecode,p-&gt;name,p-&gt;price,p-&gt;type,p-&gt;prod,p-&gt;shelf,p-&gt;stock);</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sum</span><span class="params">(struct med *p)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(p) &#123;</span><br><span class="line">		sum+=p-&gt;stock;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"药品种类：%d\n药品总量：%d"</span>,i,sum);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//组合查询：stock&gt;10的</span></span><br><span class="line"><span class="comment">//单项查询：按编码  按价格区间</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(struct med *p)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"选择查询内容：\n1.库存小于10或可能在一年内过期的药\n2.按编码查询\n3.按价格区间查询\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line">	<span class="keyword">if</span>(num==<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"今年是__年：    "</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"编码     名称   价格    药品类型 生产日期（年） 保质期（年） 库存\n"</span>);</span><br><span class="line">		<span class="keyword">while</span>(p) &#123;</span><br><span class="line">			<span class="keyword">if</span>(p-&gt;stock&lt;<span class="number">10</span>||p-&gt;shelf-n&lt;<span class="number">2</span>)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d     %s     %.2lf %5s %10d %10d %14d\n"</span>,p-&gt;elecode,p-&gt;name,p-&gt;price,p-&gt;type,p-&gt;prod,p-&gt;shelf,p-&gt;stock);</span><br><span class="line">				<span class="comment">//printf("%d %s %lf %s %d %d %d\n",p-&gt;elecode,p-&gt;name,p-&gt;price,p-&gt;type,p-&gt;prod,p-&gt;shelf,p-&gt;stock);</span></span><br><span class="line">			p=p-&gt;next; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">2</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入编码：   "</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"名称   价格    药品类型 生产日期（年） 保质期（年） 库存\n"</span>);</span><br><span class="line">		<span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(p-&gt;elecode==n) &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">			<span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(p!=<span class="literal">NULL</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%s     %.2lf %5s %10d %10d %14d\n"</span>,p-&gt;name,p-&gt;price,p-&gt;type,p-&gt;prod,p-&gt;shelf,p-&gt;stock);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Wrong Number\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">3</span>) &#123;</span><br><span class="line">		<span class="keyword">int</span> <span class="built_in">min</span>,<span class="built_in">max</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入最低和最高价格，以空格分开：    "</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;<span class="built_in">min</span>,&amp;<span class="built_in">max</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"编码     名称   价格    药品类型 生产日期（年） 保质期（年） 库存\n"</span>);</span><br><span class="line">		<span class="keyword">while</span>(p) &#123;</span><br><span class="line">			<span class="keyword">if</span>(p-&gt;price&gt;=<span class="built_in">min</span>&amp;&amp;p-&gt;price&lt;=<span class="built_in">max</span>)</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d     %s     %.2lf %5s %10d %10d %14d\n"</span>,p-&gt;elecode,p-&gt;name,p-&gt;price,p-&gt;type,p-&gt;prod,p-&gt;shelf,p-&gt;stock);</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"错误的选项\n"</span>);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(struct med *p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"输入修改药品的编码:\n"</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num);</span><br><span class="line">	<span class="keyword">while</span>(p) &#123;</span><br><span class="line">		<span class="keyword">if</span>(p-&gt;elecode!=num) &#123;</span><br><span class="line">			p=p-&gt;next;</span><br><span class="line">		&#125; <span class="keyword">else</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"编码错误"</span>);</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"输入修改药品信息:\n"</span>);	</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"顺序输入药品的：名称 价格 药品类型（处方药/非处方药） 生产日期（年） 保质期（年） 库存\n"</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s %lf %s %d %d %d"</span>,p-&gt;name,&amp;p-&gt;price,p-&gt;type,&amp;p-&gt;prod,&amp;p-&gt;shelf,&amp;p-&gt;stock);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"成功修改\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"输入删除药品编码："</span>);</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">med</span> *<span class="title">head</span>,*<span class="title">nextp</span>,*<span class="title">d</span>;</span></span><br><span class="line">	head=p;</span><br><span class="line">	nextp=p;</span><br><span class="line">	<span class="keyword">if</span>(head-&gt;elecode==n) &#123;</span><br><span class="line">		p=p-&gt;next;</span><br><span class="line">		<span class="built_in">free</span>(head);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"成功删除"</span>);</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">	head=head-&gt;next;</span><br><span class="line">		<span class="keyword">while</span>(head) &#123;</span><br><span class="line">			<span class="keyword">if</span>(head-&gt;elecode!=n) &#123;</span><br><span class="line">				head=head-&gt;next;</span><br><span class="line">				nextp=nextp-&gt;next;</span><br><span class="line">			&#125; <span class="keyword">else</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">NULL</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"错误编码"</span>);</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			</span><br><span class="line">			nextp-&gt;next=head-&gt;next;</span><br><span class="line">			<span class="built_in">free</span>(head);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"成功删除"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	getchar();</span><br><span class="line">	getchar();</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">(struct med *p)</span> </span>&#123;</span><br><span class="line">	FILE* fp;</span><br><span class="line">	fp = fopen(<span class="string">".\\medinfo.txt"</span>, <span class="string">"w"</span>);</span><br><span class="line">	<span class="keyword">while</span> (p) &#123;</span><br><span class="line">		<span class="built_in">fprintf</span>(fp,<span class="string">"%d %s %.2lf %s %d %d %d\n"</span>,p-&gt;elecode,p-&gt;name,p-&gt;price,p-&gt;type,p-&gt;prod,p-&gt;shelf,p-&gt;stock);</span><br><span class="line"></span><br><span class="line">		p = p-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	fclose(fp);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"保存成功\n"</span>);</span><br><span class="line">	getchar();</span><br><span class="line">	getchar();</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(p!=<span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">med</span> *<span class="title">nextp</span>=<span class="title">p</span>-&gt;<span class="title">next</span>;</span></span><br><span class="line">		<span class="built_in">free</span>(p);</span><br><span class="line">		<span class="keyword">while</span>(nextp) &#123;</span><br><span class="line">			p=nextp;</span><br><span class="line">			nextp=nextp-&gt;next;</span><br><span class="line">			<span class="built_in">free</span>(p);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	FILE *fp;</span><br><span class="line">	fp=fopen(<span class="string">".\\medinfo.txt"</span>,<span class="string">"r"</span>);</span><br><span class="line">	<span class="keyword">if</span>(fp==<span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"文件无法打开"</span>);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		struct med *nextp,*head;</span><br><span class="line">		head=<span class="literal">NULL</span>;</span><br><span class="line">		nextp=(struct med*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct med));</span><br><span class="line">		nextp-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">fscanf</span>(fp,<span class="string">"%d"</span>,&amp;nextp-&gt;elecode)==<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="built_in">fscanf</span>(fp,<span class="string">"%s"</span>,nextp-&gt;name);</span><br><span class="line">			<span class="built_in">fscanf</span>(fp,<span class="string">"%lf"</span>,&amp;nextp-&gt;price);</span><br><span class="line">			<span class="built_in">fscanf</span>(fp,<span class="string">"%s"</span>,&amp;nextp-&gt;type);</span><br><span class="line">			<span class="built_in">fscanf</span>(fp,<span class="string">"%d"</span>,&amp;nextp-&gt;prod);</span><br><span class="line">			<span class="built_in">fscanf</span>(fp,<span class="string">"%d"</span>,&amp;nextp-&gt;shelf);</span><br><span class="line">			<span class="built_in">fscanf</span>(fp,<span class="string">"%d"</span>,&amp;nextp-&gt;stock);</span><br><span class="line">			<span class="keyword">if</span>(head==<span class="literal">NULL</span>) &#123;</span><br><span class="line">				head=nextp;</span><br><span class="line">				p=head;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				head-&gt;next=nextp;</span><br><span class="line">				head=head-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			nextp=(struct med*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct med));</span><br><span class="line">			nextp-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		fclose(fp);</span><br><span class="line">	&#125;</span><br><span class="line">	getchar();</span><br><span class="line">	getchar();</span><br><span class="line">	system(<span class="string">"cls"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://brubbish.github.io/13498.html" title="课设-药店管理系统" target="_blank" rel="external">https://brubbish.github.io/13498.html</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/brubbish" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/brubbish" target="_blank"><span class="text-dark">Bruce</span><small class="ml-1x">Learner，Beginner</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/9fec375a.html" title="2020.02.24-2020.03.01"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/12995.html" title="2020.02.17-2020.02.23"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/brubbish" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2020 Bruce
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+    <script defer type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-153514659-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+</html>
