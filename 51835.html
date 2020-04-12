@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/12/GLmt7n.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/12/GLmY0s.png">
 <meta property="article:published_time" content="2020-04-12T04:10:30.000Z">
-<meta property="article:modified_time" content="2020-04-12T06:38:41.917Z">
+<meta property="article:modified_time" content="2020-04-12T07:22:37.677Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="周报">
 <meta property="article:tag" content="加密与解密">
@@ -320,7 +320,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/51835.html#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
@@ -442,9 +442,11 @@ MD5的结果按32位一组分成4组，由4个寄存器（A、B、C、D）进行
 <li>输出</li>
 </ol>
 <h4 id="分析"><a class="markdownIt-Anchor" href="#分析"></a> 分析</h4>
-<p>用peid插件krypto analyzer分析，得知程序含有md5的迭代常数，可以猜测使用了md5算法</p>
-<p><img src="https://s1.ax1x.com/2020/04/12/GLmt7n.png" alt="输入的注册码后进行长度等的判断以及数据初步处理" /><br />
-<img src="https://s1.ax1x.com/2020/04/12/GLmY0s.png" alt="上图call的地址里的代码，通过mov的4个数判断在进行md5初始化" /><br />
+<p>用peid插件krypto analyzer分析，得知程序含有md5的迭代常数，可以猜测使用了md5算法<br />
+输入的注册码后进行长度等的判断以及数据初步处理：<br />
+<img src="https://s1.ax1x.com/2020/04/12/GLmt7n.png" alt="" /><br />
+上图call的地址里的代码，通过mov的4个数判断在进行md5初始化：<br />
+<img src="https://s1.ax1x.com/2020/04/12/GLmY0s.png" alt="" /><br />
 再根据后续出现的md5算法的正弦函数表（如D76AA478）中的元素可以判断为md5算法</p>
 <h3 id="sha算法"><a class="markdownIt-Anchor" href="#sha算法"></a> SHA算法</h3>
 <p>只看了一点，就放到下周的周报上了</p>
