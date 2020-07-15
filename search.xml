@@ -1451,7 +1451,7 @@ cpu通过总线传输信息，总线分为：地址，， 控制，， 数据，
   <entry>
     <title>2020.07.06-2020.07.12</title>
     <url>/36664.html</url>
-    <content><![CDATA[<h1 id="逆向工程核心原理"><a href="#逆向工程核心原理" class="headerlink" title="逆向工程核心原理"></a>逆向工程核心原理</h1><h2 id="逆向分析法"><a href="#逆向分析法" class="headerlink" title="逆向分析法"></a>逆向分析法</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="MS-DOS头部"><a href="#MS-DOS头部" class="headerlink" title="MS-DOS头部"></a>MS-DOS头部</h2><p>每一个pe文件都以一个dos程序开始。程序在dos下执行，dos就能识别出这是一个有效的执行体，然后运行MZ header的DOS stub（dos块）。DOS stub是一个有效的exe，大多数情况下由编译器或汇编器自动生成。通常把DOS MZ头和DOS stub合称为DOS文件头。<br>PE文件的第一个字节位于MS-DOS头部，称作IMAGE_DOS_HEADER，其中有两个字段：e_magic和e_lfanew。   </p>
+    <content><![CDATA[<h2 id="MS-DOS头部"><a href="#MS-DOS头部" class="headerlink" title="MS-DOS头部"></a>MS-DOS头部</h2><p>每一个pe文件都以一个dos程序开始。程序在dos下执行，dos就能识别出这是一个有效的执行体，然后运行MZ header的DOS stub（dos块）。DOS stub是一个有效的exe，大多数情况下由编译器或汇编器自动生成。通常把DOS MZ头和DOS stub合称为DOS文件头。<br>PE文件的第一个字节位于MS-DOS头部，称作IMAGE_DOS_HEADER，其中有两个字段：e_magic和e_lfanew。   </p>
 <ul>
 <li><p>e_magic的值被设为5A4Dh,ASCII值为MZ  </p>
 </li>
@@ -1482,16 +1482,12 @@ cpu通过总线传输信息，总线分为：地址，， 控制，， 数据，
 <h3 id="区块表"><a href="#区块表" class="headerlink" title="区块表"></a>区块表</h3><p>区块表是一个IMAGE_SECTION_HEADER结构数组，每个区块表结构包含了它所关联的区块的信息，例如位置、长度等，数组的数目由IMAGE_NT_HEADERS.FileHeader.NumberOfSection指出。   </p>
 <h3 id="常见区块与区块合并"><a href="#常见区块与区块合并" class="headerlink" title="常见区块与区块合并"></a>常见区块与区块合并</h3><p>链接器能够合并区块，优点是节省空间。每个区块至少占用一个内存页，将两个区块合并就有可能少用一个内存页。<br>部分在载入内存时由Windows加载器写入的输入数据可能会被放入只读区块，因为在加载时，系统会临时修改那些包含输入数据的页属性为可读可写，初始化完成后恢复为原来的属性</p>
 <h3 id="区块对齐值"><a href="#区块对齐值" class="headerlink" title="区块对齐值"></a>区块对齐值</h3><p>区块有两种对齐值，一种用于磁盘文件内，一种用于内存，两者可以不同。<br>PE文件头里的FileAlignment定义了<em>磁盘区块</em>的对齐值。在不足的地方（区块间隙）用00h填充<br>PE文件头里的SectionAlignment定义了<em>内存区块</em>的对齐值。当PE文件被映射到内存中时，区块总是至少从一个页边界处开始，即每个区块的第一个字节对应于某个内存页。<br>建立一个区块在文件中的偏移和内存中的偏移相同的PE文件，可以提高载入速度并使文件变大</p>
-<h3 id="文件偏移与虚拟地址的转换"><a href="#文件偏移与虚拟地址的转换" class="headerlink" title="文件偏移与虚拟地址的转换"></a>文件偏移与虚拟地址的转换</h3><p>对于磁盘对齐值和内存页不同的区块，同一数据在磁盘文件中的偏移和在内存中的偏移不同，需要进行转换。    </p>
-<p>文件被映射到内存中时，MS-DOS头部、PE文件头和块表的偏移位置和大小没有变化，而各区块被映射到内存后偏移位置发生变化</p>
+<h3 id="文件偏移与虚拟地址的转换"><a href="#文件偏移与虚拟地址的转换" class="headerlink" title="文件偏移与虚拟地址的转换"></a>文件偏移与虚拟地址的转换</h3><p>对于磁盘对齐值和内存页不同的区块，同一数据在磁盘文件中的偏移和在内存中的偏移不同，需要进行转换。<br><img src="https://s1.ax1x.com/2020/07/15/U010qs.png" alt="U010qs.png"><br>文件被映射到内存中时，MS-DOS头部、PE文件头和块表的偏移位置和大小没有变化，而各区块被映射到内存后偏移位置发生变化</p>
 <h2 id="输入表"><a href="#输入表" class="headerlink" title="输入表"></a>输入表</h2><p>可执行文件使用来自其他DLL的代码或数据的动作称为输入。当PE文件被载入时，加载器的工作之一就是定位所有被输入的函数和数据，并让文件可以使用那些地址。这个过程通过PE文件的输入表Import Table完成。输入表中保存的是函数名和其驻留的DLL名等动态链接所需的信息。   </p>
 <h3 id="输入函数的调用"><a href="#输入函数的调用" class="headerlink" title="输入函数的调用"></a>输入函数的调用</h3><p>输入函数被程序调用，但执行代码不在程序中。这些函数的代码位于相关的DLL文件中，在程序中只保留函数信息如函数名、DLL文件名等。磁盘上的PE文件无法得知这些输入函数在内存中的地址，只有当载入内存后，加载器才将相关DLL载入，并将函数地址和调用的指令联系起来   </p>
 ]]></content>
       <tags>
         <tag>加密与解密</tag>
-        <tag>CTF</tag>
-        <tag>c++</tag>
-        <tag>逆向工程核心原理</tag>
       </tags>
   </entry>
   <entry>
