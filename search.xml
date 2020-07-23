@@ -53,17 +53,17 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inc</span> <span class="params">(<span class="keyword">const</span> <span class="keyword">void</span> * a,<span class="keyword">const</span> <span class="keyword">void</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> * (<span class="keyword">int</span> * )a-* (<span class="keyword">int</span> *)b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">	qsort(a,n, <span class="keyword">sizeof</span>(<span class="keyword">int</span>),inc);</span><br></pre></td></tr></table></figure>
 <p>了解了一下快排<br>感觉很神奇</p>
 <p><a href="https://mp.weixin.qq.com/s/PQLC7qFjb74kt6PdExP8mw" target="_blank" rel="noopener">漫画：什么是快速排序？（完整版）</a></p>
-<h2 id="2-汇编语言学习"><a href="#2-汇编语言学习" class="headerlink" title="2.汇编语言学习"></a>2.汇编语言学习</h2><h4 id="ds和-address"><a href="#ds和-address" class="headerlink" title="ds和[address]"></a>ds和[address]</h4><blockquote>
+<h2 id="2-汇编语言学习"><a href="#2-汇编语言学习" class="headerlink" title="2.汇编语言学习"></a>2.汇编语言学习</h2><h3 id="ds和-address"><a href="#ds和-address" class="headerlink" title="ds和[address]"></a>ds和[address]</h3><blockquote>
 <p>将1000：0中的数据读到al中：</p>
 <p>mov bx,1000H<br>mov ds,bx<br>mov al,[0]</p>
 </blockquote>
 <p>[…..]里表示的是偏移地址，执行第三条指令时cpu自动取ds中的数据作为内存单元的段地址</p>
 <p>ds是段寄存器，不能用mov ds,1000H，只能用一个寄存器进行中转。</p>
-<h4 id="mov-add-sub指令"><a href="#mov-add-sub指令" class="headerlink" title="mov add sub指令"></a>mov add sub指令</h4><p>mov/sub/add 寄存器，数据<br>mov/sub/add 寄存器，寄存器<br>mov/sub/add 寄存器&lt;—-&gt;内存单元</p>
+<h3 id="mov-add-sub指令"><a href="#mov-add-sub指令" class="headerlink" title="mov add sub指令"></a>mov add sub指令</h3><p>mov/sub/add 寄存器，数据<br>mov/sub/add 寄存器，寄存器<br>mov/sub/add 寄存器&lt;—-&gt;内存单元</p>
 <p>mov 段寄存器&lt;—-&gt;寄存器<br>mov 内存单元&lt;—-&gt;段寄存器</p>
 <p>sub和add 不能对段寄存器操作</p>
-<h4 id="栈："><a href="#栈：" class="headerlink" title="栈："></a>栈：</h4><p>入栈：将一个新的元素放到栈顶<br>出栈：从栈顶取出一个元素<br>栈顶的元素总是最后入栈，需要出栈时又最先被从栈中取出</p>
-<h6 id="栈机制："><a href="#栈机制：" class="headerlink" title="栈机制："></a>栈机制：</h6><p>都以字为单位进行<br>push 入栈<br>pop 出栈<br>高地址单元存放高8位，低地址单元存放低8位</p>
+<h3 id="栈："><a href="#栈：" class="headerlink" title="栈："></a>栈：</h3><p>入栈：将一个新的元素放到栈顶<br>出栈：从栈顶取出一个元素<br>栈顶的元素总是最后入栈，需要出栈时又最先被从栈中取出</p>
+<h4 id="栈机制："><a href="#栈机制：" class="headerlink" title="栈机制："></a>栈机制：</h4><p>都以字为单位进行<br>push 入栈<br>pop 出栈<br>高地址单元存放高8位，低地址单元存放低8位</p>
 <p>cpu如何知道某段空间被当作栈来使用？——栈顶的段地址存放在段寄存器SS中。<br>cpu如何知道哪个单元时栈顶单元？——偏移地址存放在寄存器SP中。</p>
 <p>push ax 执行时：</p>
 <ol>
@@ -71,8 +71,8 @@
 <li>将ax中的内容送入ss：sp指向的内存单元处</li>
 </ol>
 <p>栈空，ss：sp指向占空间最高地址单元的下一个单元：<br>如果将10000H~1000FH这段空间当作栈，此时ss=1000，sp=0010</p>
-<h6 id="栈顶超界："><a href="#栈顶超界：" class="headerlink" title="栈顶超界："></a>栈顶超界：</h6><p>push：sp=sp-2，将栈空间外的数据覆盖<br>pop：sp=sp+2，再push后将栈空间外的数据覆盖</p>
-<h5 id="push、pop指令"><a href="#push、pop指令" class="headerlink" title="push、pop指令"></a>push、pop指令</h5><ul>
+<h4 id="栈顶超界："><a href="#栈顶超界：" class="headerlink" title="栈顶超界："></a>栈顶超界：</h4><p>push：sp=sp-2，将栈空间外的数据覆盖<br>pop：sp=sp+2，再push后将栈空间外的数据覆盖</p>
+<h4 id="push、pop指令"><a href="#push、pop指令" class="headerlink" title="push、pop指令"></a>push、pop指令</h4><ul>
 <li>push：先改变sp，后向ss：sp传送</li>
 <li>pop：先读取ss：sp处数据，后改变sp</li>
 </ul>
@@ -1409,7 +1409,18 @@ cpu通过总线传输信息，总线分为：地址，， 控制，， 数据，
   <entry>
     <title>大一暑假日常</title>
     <url>/31605.html</url>
-    <content><![CDATA[<h2 id="7-21"><a href="#7-21" class="headerlink" title="7-21"></a>7-21</h2><p>昨天（周一）把《程》第三章看完，感觉没啥好写的（其实是晚上十一点才想起来就懒得写了…）   </p>
+    <content><![CDATA[<h2 id="7-23"><a href="#7-23" class="headerlink" title="7-23"></a>7-23</h2><ol>
+<li>写了一题攻防世界的pwn题:<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5051&page=1" target="_blank" rel="noopener">when_did_you_born</a>，看了一题<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5057&page=1" target="_blank" rel="noopener">guess_num</a>，还没写出来（应该是不会了…）    </li>
+<li>看了点数据结构的堆栈  部分 </li>
+</ol>
+<p>写题花了比较久，差不多是看了三题发现一题会写，一题思路错了，一题根本没思路….<br><a href="/64573.html">材料</a></p>
+<h2 id="7-22"><a href="#7-22" class="headerlink" title="7-22"></a>7-22</h2><p>今天有半天在动车上…</p>
+<ol>
+<li>攻防世界上写了一题pwn：<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5053&page=1" target="_blank" rel="noopener">level0</a></li>
+<li>《程》第四章第一节到第四节</li>
+</ol>
+<p>打算以后十一点半后不看手机电脑了:(<br>好像也没啥材料写…</p>
+<h2 id="7-21"><a href="#7-21" class="headerlink" title="7-21"></a>7-21</h2><p>昨天（周一）把《程》第三章看完，感觉没啥好写的（其实是晚上十一点才想起来就懒得写了…）   </p>
 <ol>
 <li>发现上回把pwntools装上了（之前以为没装成），就在pwnable.kr上写了两题，攻防世界写了一题pwn。emmm看的题比写的多一点</li>
 <li>看了《逆向工程核心原理》的第二章。分析了“hello world”程序，讲了两种修改输出字符串的方法。没啥想法。</li>
