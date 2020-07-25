@@ -1409,7 +1409,12 @@ cpu通过总线传输信息，总线分为：地址，， 控制，， 数据，
   <entry>
     <title>大一暑假日常</title>
     <url>/31605.html</url>
-    <content><![CDATA[<h2 id="7-23"><a href="#7-23" class="headerlink" title="7-23"></a>7-23</h2><ol>
+    <content><![CDATA[<h2 id="7-24"><a href="#7-24" class="headerlink" title="7-24"></a>7-24</h2><ol>
+<li>一题pwn。有思路，但是有个地方不知道怎么实现，看了别人的exp知道怎么写了，不过有些地方还不是很懂</li>
+<li>《逆向工程核心原理》第四章</li>
+</ol>
+<p><a href="/">材料</a></p>
+<h2 id="7-23"><a href="#7-23" class="headerlink" title="7-23"></a>7-23</h2><ol>
 <li>写了一题攻防世界的pwn题:<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5051&page=1" target="_blank" rel="noopener">when_did_you_born</a>，看了一题<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5057&page=1" target="_blank" rel="noopener">guess_num</a>，还没写出来（应该是不会了…）    </li>
 <li>看了点数据结构的堆栈  部分 </li>
 </ol>
