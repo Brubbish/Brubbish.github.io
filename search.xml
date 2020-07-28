@@ -1457,7 +1457,7 @@ cpu通过总线传输信息，总线分为：地址，， 控制，， 数据，
 <li>写了一题pwnable.kr上的题</li>
 </ol>
 <p>本来想写个攻防世界上的”guess_num“，结果场景加载不出来</p>
-<p><a href="/52170.html">材料</a></p>
+<p><a href="/53130.html">材料</a></p>
 <h2 id="7-27"><a href="#7-27" class="headerlink" title="7-27"></a>7-27</h2><p>看了点数据结构，本来想写一题pwn题，结果pwntools突然用不了（可能是之前删了一些文件），安装pwndbg也不知道有没有弄上…就没写了<br>早上kali网络连不上，虚拟机上弄了半个小时没好，物理机的网络重新连接一下又好了…<br>打算这几天写掉这两题   </p>
 <ol>
 <li><a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5057&page=1" target="_blank" rel="noopener">guess_num</a>     </li>
