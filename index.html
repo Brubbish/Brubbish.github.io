@@ -220,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-25 10:18:52" itemprop="dateModified" datetime="2020-07-25T10:18:52+08:00">2020-07-25</time>
+                <time title="修改时间：2020-07-28 10:30:58" itemprop="dateModified" datetime="2020-07-28T10:30:58+08:00">2020-07-28</time>
               </span>
 
           
@@ -234,11 +234,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="7-24"><a href="#7-24" class="headerlink" title="7-24"></a>7-24</h2><ol>
+          <h2 id="7-28"><a href="#7-28" class="headerlink" title="7-28"></a>7-28</h2><p>数据结构-串 没啥好记得</p>
+<h2 id="7-27"><a href="#7-27" class="headerlink" title="7-27"></a>7-27</h2><p>看了点数据结构，本来想写一题pwn题，结果pwntools突然用不了（可能是之前删了一些文件），安装pwndbg也不知道有没有弄上…就没写了<br>早上kali网络连不上，虚拟机上弄了半个小时没好，物理机的网络重新连接一下又好了…<br>打算这几天写掉这两题<br><a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5057&page=1" target="_blank" rel="noopener">guess_num</a><br>passcode:ssh <a href="mailto:passcode@pwnable.kr">passcode@pwnable.kr</a> -p2222 (pw:guest)</p>
+<p><a href="/52170.html">材料(笔记)</a></p>
+<h2 id="7-24"><a href="#7-24" class="headerlink" title="7-24"></a>7-24</h2><ol>
 <li>一题pwn。有思路，但是有个地方不知道怎么实现，看了别人的exp知道怎么写了，不过有些地方还不是很懂</li>
 <li>《逆向工程核心原理》第四章</li>
 </ol>
-<p><a href="/">材料</a></p>
+<p><a href="/51850.html">材料</a></p>
 <h2 id="7-23"><a href="#7-23" class="headerlink" title="7-23"></a>7-23</h2><ol>
 <li>写了一题攻防世界的pwn题:<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5051&page=1" target="_blank" rel="noopener">when_did_you_born</a>，看了一题<a href="https://adworld.xctf.org.cn/task/answer?type=pwn&number=2&grade=0&id=5057&page=1" target="_blank" rel="noopener">guess_num</a>，还没写出来（应该是不会了…）    </li>
 <li>看了点数据结构的堆栈  部分 </li>
@@ -283,6 +286,79 @@
 <li>《程序员的自我修养》看完了第二章，上周第一章“回顾大家所了解的”看得瑟瑟发抖。这章了解了一些预处理、编译、汇编和链接的大致过程，还有静态语言、动态语言、静态链接、动态链接的区别。emmm写编译器真是太难了….</li>
 </ol>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://brubbish.github.io/33337.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bruce">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brubbish's">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/33337.html" class="post-title-link" itemprop="url">2020.05.18-2020.05.25</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-25 15:00:30" itemprop="dateCreated datePublished" datetime="2020-05-25T15:00:30+08:00">2020-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-05 21:39:29" itemprop="dateModified" datetime="2020-07-05T21:39:29+08:00">2020-07-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>从上周开始不用写周报了<br>感觉没有监督就懒散了23333   </p>
+<h1 id="壳"><a href="#壳" class="headerlink" title="壳"></a>壳</h1><p>附加在原始程序上，通过windows加载器载入内存后，先于原始程序执行，在执行过程中对原始程序进行解密、还原，还原后把控制权还给原始程序，执行原来的代码。可以防止程序文件被非法修改或者静态反编译<br>许多木马和病毒都喜欢用壳来保护和隐藏自己。对一些流行的壳，杀毒引擎先对目标软件进行脱壳，再进行病毒检查；对大多数私人壳，杀毒软件不会开发解压引擎，而是直接当成木马或病毒处理，因此，商业软件出于兼容性的考虑，很少使用加壳保护，而在其他方面提高软件保护强度<br>不同的外壳侧重方面不一样，有的侧重压缩，有的侧重加密，还有一些提供额外的功能，如注册机制、使用次数、时间限制等</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/33337.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -453,79 +529,6 @@
 <h2 id="输入表"><a href="#输入表" class="headerlink" title="输入表"></a>输入表</h2><p>可执行文件使用来自其他DLL的代码或数据的动作称为输入。当PE文件被载入时，加载器的工作之一就是定位所有被输入的函数和数据，并让文件可以使用那些地址。这个过程通过PE文件的输入表Import Table完成。输入表中保存的是函数名和其驻留的DLL名等动态链接所需的信息。   </p>
 <h3 id="输入函数的调用"><a href="#输入函数的调用" class="headerlink" title="输入函数的调用"></a>输入函数的调用</h3><p>输入函数被程序调用，但执行代码不在程序中。这些函数的代码位于相关的DLL文件中，在程序中只保留函数信息如函数名、DLL文件名等。磁盘上的PE文件无法得知这些输入函数在内存中的地址，只有当载入内存后，加载器才将相关DLL载入，并将函数地址和调用的指令联系起来   </p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://brubbish.github.io/33337.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Bruce">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Brubbish's">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/33337.html" class="post-title-link" itemprop="url">2020.05.18-2020.05.25</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-25 15:00:30" itemprop="dateCreated datePublished" datetime="2020-05-25T15:00:30+08:00">2020-05-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-05 21:39:29" itemprop="dateModified" datetime="2020-07-05T21:39:29+08:00">2020-07-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>从上周开始不用写周报了<br>感觉没有监督就懒散了23333   </p>
-<h1 id="壳"><a href="#壳" class="headerlink" title="壳"></a>壳</h1><p>附加在原始程序上，通过windows加载器载入内存后，先于原始程序执行，在执行过程中对原始程序进行解密、还原，还原后把控制权还给原始程序，执行原来的代码。可以防止程序文件被非法修改或者静态反编译<br>许多木马和病毒都喜欢用壳来保护和隐藏自己。对一些流行的壳，杀毒引擎先对目标软件进行脱壳，再进行病毒检查；对大多数私人壳，杀毒软件不会开发解压引擎，而是直接当成木马或病毒处理，因此，商业软件出于兼容性的考虑，很少使用加壳保护，而在其他方面提高软件保护强度<br>不同的外壳侧重方面不一样，有的侧重压缩，有的侧重加密，还有一些提供额外的功能，如注册机制、使用次数、时间限制等</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/33337.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
