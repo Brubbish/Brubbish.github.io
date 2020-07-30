@@ -247,8 +247,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Windows内核基础"><a href="#Windows内核基础" class="headerlink" title="Windows内核基础"></a>Windows内核基础</h1><h2 id="内核的数据结构"><a href="#内核的数据结构" class="headerlink" title="内核的数据结构"></a>内核的数据结构</h2><h3 id="TEB"><a href="#TEB" class="headerlink" title="TEB"></a>TEB</h3><p>TEB结构(Thread environment block,线程环境块)和PEB一样，是应用层中的结构。<br>包含了系统频繁使用的一些与线程相关的数据，进程中每个线程（除系统线程）都有一个自己的TEB，一个进程的所有TEB都存放在从0x7FFDE000开始的线性内存中，每4KB为一个完整的TEB<br>用WinDbg的本地调试功能可以查看系统中的TEB结构   </p>
-<a id="more"></a>
+        <h1 id="Windows内核基础"><a href="#Windows内核基础" class="headerlink" title="Windows内核基础"></a>Windows内核基础</h1><h2 id="内核的数据结构"><a href="#内核的数据结构" class="headerlink" title="内核的数据结构"></a>内核的数据结构</h2><h3 id="TEB"><a href="#TEB" class="headerlink" title="TEB"></a>TEB</h3><p>TEB结构(Thread environment block,线程环境块)和PEB一样，是应用层中的结构。<br>包含了系统频繁使用的一些与线程相关的数据，进程中每个线程（除系统线程）都有一个自己的TEB，一个进程的所有TEB都存放在从0x7FFDE000开始的线性内存中，每4KB为一个完整的TEB<br>用WinDbg的本地调试功能可以查看系统中的TEB结构<br><a id="more"></a></p>
 <h4 id="TEB访问"><a href="#TEB访问" class="headerlink" title="TEB访问"></a>TEB访问</h4><p>可以通过NtCurrentTab函数调用和FS段寄存器访问两种方式访问TEB结构  </p>
 <ol>
 <li>NtCurrentTab<br>一个ntdll.dll中的函数，该函数可以返回当前线程TEB的地址  </li>
@@ -263,7 +262,7 @@
 <ul>
 <li>ptr：防止两个操作数不一样。<br>用byte/word/dword ptr指定内存单元的长度（字节、字、双字）  </li>
 </ul>
-<ol start="2">
+<ol>
 <li>pop   </li>
 <li>pushad<br>按照eax、ecx、edx、ebx、esp、ebp、esi、edi的顺序把所有通用寄存器压入栈   </li>
 <li>popad<br>把pushad入栈的值取出（顺序相反）   </li>
@@ -272,7 +271,7 @@
 </li>
 <li>赋值指令   <ol>
 <li>mov   </li>
-<li>movsx(操作有符号数)<br>第一个操作数的位数比第二个操作数多，第二个填充第一个的前面几位<br>填充的结果跟填充数字正负有关。用负数填充，结果的剩余部分填F；整数填充剩余部分填0。<br>如：用F000填EAX，结果为FFFFF000；用1234填EAX，结果为00001234.<br>(16位数的正数范围为0<del>7FFF，负数范围为8000</del>FFFF)</li>
+<li>movsx(操作有符号数)<br>第一个操作数的位数比第二个操作数多，第二个填充第一个的前面几位<br>填充的结果跟填充数字正负有关。用负数填充，结果的剩余部分填F；整数填充剩余部分填0。<br>如：用F000填EAX，结果为FFFFF000；用1234填EAX，结果为00001234.<br>(16位数的正数范围为0~7FFF，负数范围为8000~FFFF)</li>
 <li>movzx（操作无符号数）<br>与movsx相似，但剩余部分总填充0</li>
 <li>LEA<br>取地址指令，第一个操作数是通用寄存器，第二个是内存单元的地址（而不是值）<br>如”LEA EAX,DOWRD PTR DS:[ECX+38]”不是获取内存中[ECX+38],而要计算ECX+38的值，并赋给EAX   </li>
 <li>XCHG<br>交换两个操作数的值，寄存器/内存单元和寄存器  <h2 id="数学指令"><a href="#数学指令" class="headerlink" title="数学指令"></a>数学指令</h2></li>

@@ -311,7 +311,7 @@
       
           <h1 id="关于上周博客炸了的问题"><a href="#关于上周博客炸了的问题" class="headerlink" title="关于上周博客炸了的问题"></a>关于上周博客炸了的问题</h1><p>原因是两个_config.yml（可能还有其他文件吧）里所有缩进都不见了….不知道是为啥，就甩给 vscode 和格式化代码插件吧（….)<br>然后，原来 .yml 要用缩进表示层级啊….<br>嗯顺便换了个主题</p>
 <h1 id="64-位软件逆向技术"><a href="#64-位软件逆向技术" class="headerlink" title="64 位软件逆向技术"></a>64 位软件逆向技术</h1><h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>c++的三大核心机制是封装、继承、多态，虚函数是多态的一种体现。在逆向过程中，虚函数是一种还原面向对象代码的重要手段</p>
-<h3 id="虚表"><a href="#虚表" class="headerlink" title="虚表"></a>虚表</h3><p>不同的类虚表不同，相同的类对象共享一个虚表<br>（以下讲的是用 c++写的程序）<br>在构造函数中，首先初始化虚表指针，然后初始化数据成员，最后返回 this 指针  </p>
+<h3 id="虚表"><a href="#虚表" class="headerlink" title="虚表"></a>虚表</h3><p>不同的类虚表不同，相同的类对象共享一个虚表<br>（以下讲的是用 c++写的程序）<br>在构造函数中，首先初始化虚表指针，然后初始化数据成员，最后返回 this 指针<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/20849.html#more" rel="contents">
@@ -394,7 +394,6 @@
 <li>sf、of结合判断（=1小于）</li>
 <li>zf（=1或zf!=of，不大于）<blockquote>
 <p><a href="https://brubbish.github.io/34199.html#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8">https://brubbish.github.io/34199.html#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8</a></p>
-</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/50551.html#more" rel="contents">
@@ -467,7 +466,7 @@
 
       
           <h1 id="32位软件逆向技术"><a href="#32位软件逆向技术" class="headerlink" title="32位软件逆向技术"></a>32位软件逆向技术</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>计算机存储、组织数据的方式。确定数据结构后，算法就很容易得到，有时候也根据特定算法来判断数据结构</p>
-<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量分配空间时通常会使用栈和寄存器</p>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量分配空间时通常会使用栈和寄存器<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/dcd92ddb.html#more" rel="contents">
@@ -539,7 +538,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>就此开一篇单独记录 py 爬虫的学习<u>以及实操中遇到的问题</u>(可能吧)<br>（分割线用（***或—））</p>
+          <p>就此开一篇单独记录 py 爬虫的学习<u>以及实操中遇到的问题</u>(可能吧)<br>（分割线用（***或—-））</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/710f8e5f.html#more" rel="contents">
@@ -612,7 +612,7 @@
 
       
           <h1 id="IDA"><a href="#IDA" class="headerlink" title="IDA"></a>IDA</h1><h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><p>‘View’-&gt;’Open subviews’-&gt;’Enumerations’ 打开枚举窗口，按’Insert’插入新的枚举类型，按’N’添加成员<br>选中需要重新定义的数据，按’M’后将其转换<br><img src="https://s1.ax1x.com/2020/03/12/8etGNT.md.png" alt="8etGNT.md.png"></p>
-<p><img src="https://s1.ax1x.com/2020/03/12/8etJ4U.md.png" alt="8etJ4U.md.png"></p>
+<p><img src="https://s1.ax1x.com/2020/03/12/8etJ4U.md.png" alt="8etJ4U.md.png"><br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/232092d7.html#more" rel="contents">
@@ -685,7 +685,7 @@
 
       
           <h1 id="IDA"><a href="#IDA" class="headerlink" title="IDA"></a>IDA</h1><h2 id="四个快捷键"><a href="#四个快捷键" class="headerlink" title="四个快捷键"></a>四个快捷键</h2><p>添加注释：冒号或分号<br>跳转到某个地址（16进制）：’G’;返回（后退）：’Esc’;前进：’Ctrl+Enter’  </p>
-<h2 id="交叉参考"><a href="#交叉参考" class="headerlink" title="交叉参考"></a>交叉参考</h2><p>可以知道指令代码相互调用的关系<br><img src="https://s2.ax1x.com/2020/03/02/3RV2Ox.md.png" alt=" "><br>‘↑j’中j表示跳转，o表示偏移量，p表示子程序，双击或按回车可以跳到调用该处的地方<br>在‘loc_xxxxx’上按’x’打开交叉参考窗口</p>
+<h2 id="交叉参考"><a href="#交叉参考" class="headerlink" title="交叉参考"></a>交叉参考</h2><p>可以知道指令代码相互调用的关系<br><img src="https://s2.ax1x.com/2020/03/02/3RV2Ox.md.png" alt=" "><br>‘↑j’中j表示跳转，o表示偏移量，p表示子程序，双击或按回车可以跳到调用该处的地方<br>在‘loc_xxxxx’上按’x’打开交叉参考窗口<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2f00783a.html#more" rel="contents">
@@ -760,7 +760,7 @@
           <h1 id="OllyDbg-学习"><a href="#OllyDbg-学习" class="headerlink" title="OllyDbg 学习"></a>OllyDbg 学习</h1><h2 id="常用断点"><a href="#常用断点" class="headerlink" title="常用断点"></a>常用断点</h2><h3 id="int-interrupt-3断点"><a href="#int-interrupt-3断点" class="headerlink" title="int(interrupt) 3断点"></a>int(interrupt) 3断点</h3><p>在OD中用’F2’来设置，机器码是0xCC<br>执行一个int 3断点时，该地址处的指令首字节修改位CC（OD显示的还是原来的指令）  </p>
 <p>优点是可以设置无数个指令，缺点是<strong>改变了原程序机器码，容易被软件检测到</strong>，例如有些软件会检测api的首地址是否为0xCC</p>
 <h3 id="硬件断点"><a href="#硬件断点" class="headerlink" title="硬件断点"></a>硬件断点</h3><p>和DRx调试寄存器有关<br>DRx调试器共有8个（x从0 ~ 7）</p>
-<p><img src="https://s2.ax1x.com/2020/02/24/3G1qVf.png" alt=" ">  </p>
+<p><img src="https://s2.ax1x.com/2020/02/24/3G1qVf.png" alt=" "><br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/9fec375a.html#more" rel="contents">
@@ -833,7 +833,7 @@
 
       
           <p>（为了避免又发生某种奇怪的错误导致程序突然变成了前几个小时保存的版本，还是做完后把它弄到这来好了）<br>一个功能简单的管理系统，包含了menu()里的功能以及登录、注册和称不上加密的加密  </p>
-<p>尝试使用了system(“pause”)、system(“cls”)以及把黑框弄成白框的system(“color 70”)</p>
+<p>尝试使用了system(“pause”)、system(“cls”)以及把黑框弄成白框的system(“color 70”)<br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/13498.html#more" rel="contents">
@@ -905,8 +905,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="洛谷"><a href="#洛谷" class="headerlink" title="洛谷"></a>洛谷</h1><h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h3><p>memset(数组名或指针，值，大小)<br>可用于数组初始化</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line">....</span><br><span class="line"><span class="keyword">int</span> a[n];</span><br><span class="line"><span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">....</span><br></pre></td></tr></table></figure>
+          <h1 id="洛谷"><a href="#洛谷" class="headerlink" title="洛谷"></a>洛谷</h1><h2 id="函数整理"><a href="#函数整理" class="headerlink" title="函数整理"></a>函数整理</h2><h3 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h3><p>memset(数组名或指针，值，大小)<br>可用于数组初始化<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line">....</span><br><span class="line"><span class="keyword">int</span> a[n];</span><br><span class="line"><span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">....</span><br></pre></td></tr></table></figure><br>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/12995.html#more" rel="contents">

@@ -252,8 +252,7 @@
       
         <h1 id="Windows下的异常处理"><a href="#Windows下的异常处理" class="headerlink" title="Windows下的异常处理"></a>Windows下的异常处理</h1><p>操作系统处理程序错误或异常的一系列流程和技术的总称。主要有两种异常处理技术，SEH（结构化异常处理）和VEH（向量化异常处理）   </p>
 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>中断是由外部硬件设备或异步事件产生的，异常是由内部事件产生的，可分为故障、陷阱、终止 3类。前两个是可恢复的，第三个是不可恢复的，系统必须重启   </p>
-<h3 id="异常列表"><a href="#异常列表" class="headerlink" title="异常列表"></a>异常列表</h3><p><img src="https://s1.ax1x.com/2020/05/18/YfskvR.png" alt="YfskvR.png"><br>由cpu引发的称为硬件异常，如访问一个无效的地址；由操作系统或程序引发的称为软件异常<br>代码中可以用RaiseException()主动引发一个软件异常</p>
-<a id="more"></a>  
+<h3 id="异常列表"><a href="#异常列表" class="headerlink" title="异常列表"></a>异常列表</h3><p><img src="https://s1.ax1x.com/2020/05/18/YfskvR.png" alt="YfskvR.png"><br>由cpu引发的称为硬件异常，如访问一个无效的地址；由操作系统或程序引发的称为软件异常<br>代码中可以用RaiseException()主动引发一个软件异常<br><a id="more"></a>  </p>
 <h3 id="异常处理的基本过程"><a href="#异常处理的基本过程" class="headerlink" title="异常处理的基本过程"></a>异常处理的基本过程</h3><p>中断或异常发生时，cpu会通过中断描述符表（IDT）寻找处理函数。IDT是硬件和软件交接中断和异常的关口   </p>
 <h4 id="IDT"><a href="#IDT" class="headerlink" title="IDT"></a>IDT</h4><p>IDT是一张位于物理内存中的线性表，共有256项，32位下每个项的长度是8字节，64位下每个项的长度是64字节。<br>IDT的位置和长度是由cpu的IDTR寄存器描述的，IDTR共有84位，高32位为基址，低16位是表度长度。可以使用SIDT和LIDT指令读写该寄存器，LIDT只能在ring0下运行<br>IDT的每一项都是一个门结构，包括：  </p>
 <ol>
@@ -261,8 +260,7 @@
 <li>中断门，用于描述中断处理程序的入口</li>
 <li>陷阱门，用于描述异常处理程序的入口  </li>
 </ol>
-<p>用windbg的本地内核调试模式可以观察IDT</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lkd&gt; !idt &#x2F;a</span><br></pre></td></tr></table></figure>
+<p>用windbg的本地内核调试模式可以观察IDT<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lkd&gt; !idt &#x2F;a</span><br></pre></td></tr></table></figure></p>
 <h4 id="异常处理的准备工作"><a href="#异常处理的准备工作" class="headerlink" title="异常处理的准备工作"></a>异常处理的准备工作</h4><p><img src="https://s1.ax1x.com/2020/05/18/YfsVDx.png" alt="YfsVDx.png"><br>当由异常或者中断发生时，cpu会根据中断类型号执行对应的中断处理程序。<br>各个异常处理函数除了针对本异常的特定处理之外，通常会将异常信息进行封装。<br>封装的内容中，一部分是异常记录，包含本次异常的信息，包括异常代码（异常产生的原因）、异常标志、异常发生的地址等；另一部分是陷阱帧，它精确的描述了发生异常时的线程状态，该结构与处理器有关，在不同平台上结构不同。<br>封装后，异常处理函数会调用nt!KiDispatchException函数处理异常，</p>
 <h4 id="内核态的异常处理过程"><a href="#内核态的异常处理过程" class="headerlink" title="内核态的异常处理过程"></a>内核态的异常处理过程</h4><p>即当PreviousMode为KernelMode时。此时KiDispatchException会进行以下分发异常    </p>
 <ol>

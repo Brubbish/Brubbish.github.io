@@ -253,9 +253,7 @@
 
       
         <h1 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h1><h2 id="单向散列算法"><a href="#单向散列算法" class="headerlink" title="单向散列算法"></a>单向散列算法</h2><h3 id="SHA算法"><a href="#SHA算法" class="headerlink" title="SHA算法"></a>SHA算法</h3><p>安全散列算法，包括SHA-1,SHA-256,SHA-384,SHA-512,分别产生160位、256位、384位、512位散列值   </p>
-<h4 id="SHA-1算法"><a href="#SHA-1算法" class="headerlink" title="SHA-1算法"></a>SHA-1算法</h4><p>原始消息长度不能超过2^64<br>sha-1算法与md4算法原理相同，消息分组和填充方式和md5算法相同(到md5的第二步)  </p>
-<a id="more"></a>
-<p>sha-1初始散列值用5个32位双字进行初始化，如图：<br><img src="https://s1.ax1x.com/2020/04/14/GzwQKK.png" alt=" "><br>运算时使用到的常数：<br><img src="https://s1.ax1x.com/2020/04/14/GzwlDO.png" alt=" "><br>用以上两组数识别sha-1算法   </p>
+<h4 id="SHA-1算法"><a href="#SHA-1算法" class="headerlink" title="SHA-1算法"></a>SHA-1算法</h4><p>原始消息长度不能超过2^64<br>sha-1算法与md4算法原理相同，消息分组和填充方式和md5算法相同(到md5的第二步)<br><a id="more"></a><br>sha-1初始散列值用5个32位双字进行初始化，如图：<br><img src="https://s1.ax1x.com/2020/04/14/GzwQKK.png" alt=" "><br>运算时使用到的常数：<br><img src="https://s1.ax1x.com/2020/04/14/GzwlDO.png" alt=" "><br>用以上两组数识别sha-1算法   </p>
 <h2 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h2><p>加密和解密的密钥完全相同<br>安全性依赖于：</p>
 <ol>
 <li>加密算法足够强，无法根据密文直接获得原文  </li>
@@ -270,16 +268,12 @@
 <li>先对一个256字节的数组S进行初始化，按顺序填入0~255    </li>
 <li>如果输入的密钥长度小于256字节，则按密钥的填充输入的密钥（如输入1，2，3，4，5，填为1，2，3，4，5，1，2，3，…  放入数组T</li>
 <li>对1中数组元素做如下交换<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        　j = <span class="number">0</span>;</span><br><span class="line">    　  　<span class="keyword">for</span> (i = <span class="number">0</span> ; i &lt; <span class="number">256</span> ; i++)&#123;</span><br><span class="line">      　　　　j = (j + S[i] + T[i]) mod <span class="number">256</span>;</span><br><span class="line">      　　　　swap(S[i] , S[j]);</span><br><span class="line">      　　&#125;</span><br></pre></td></tr></table></figure>
-
-
 </li>
 </ol>
 </li>
 </ol>
-<ol start="2">
+<ol>
 <li>PRGA（the pseudo-random gerneration algorithm)<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(datalength--)&#123;<span class="comment">//明文长度datalength</span></span><br><span class="line">　　　i = (i + <span class="number">1</span>) mod <span class="number">256</span>;</span><br><span class="line">　　　　j = (j + S[i]) mod <span class="number">256</span>;</span><br><span class="line">　　　　swap(S[i] , S[j]);</span><br><span class="line">　　　　t = (S[i] + S[j]) mod <span class="number">256</span>;</span><br><span class="line">　　　　k = S[t];<span class="comment">//这里的K就是当前生成的一个秘钥流中的一位</span></span><br><span class="line">　　　　<span class="comment">//可以直接在这里进行加密，当然也可以将密钥流保存在数组中，最后进行异或</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 </li>
 </ol>
 <h2 id="公开密钥加密算法"><a href="#公开密钥加密算法" class="headerlink" title="公开密钥加密算法"></a>公开密钥加密算法</h2><p>亦称非对称加密算法。在加密与解密时用不同的密钥，加密用的密钥叫做公钥，解密用的密钥叫做私钥<br>公开密钥的设计基于<a href="https://blog.csdn.net/qq_21768483/article/details/80430590" target="_blank" rel="noopener">NP完全问题</a>   </p>

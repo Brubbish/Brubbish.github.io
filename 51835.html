@@ -257,9 +257,8 @@
 <ol>
 <li>EnableMenultem()<br>允许或进制指定的菜单条目<br>参数：菜单句柄、目标菜单条目的标识符、控制标志（允许、灰化、禁止等）<br>返回值：返回菜单以前的状态  </li>
 <li>EnableWindow()<br>允许或禁止指定窗口<br>参数：窗口句柄、true/false<br>返回值：0表示失败，非0表示成功  <a id="more"></a>
-<h2 id="拆解菜单限制保护"><a href="#拆解菜单限制保护" class="headerlink" title="拆解菜单限制保护"></a>拆解菜单限制保护</h2>修改控制标志或true/false  <h1 id="KeyFile保护"><a href="#KeyFile保护" class="headerlink" title="KeyFile保护"></a>KeyFile保护</h1>付费后将作者提供的注册文件keyfile放到指定目录下可用让软件成为正版<br>软件每次启动时都会读取该文件，然后利用某种算法进行处理，以此判断结果是否正确  <h2 id="相关api函数"><a href="#相关api函数" class="headerlink" title="相关api函数"></a>相关api函数</h2>|api函数|作用|</li>
+<h2 id="拆解菜单限制保护"><a href="#拆解菜单限制保护" class="headerlink" title="拆解菜单限制保护"></a>拆解菜单限制保护</h2>修改控制标志或true/false  <h1 id="KeyFile保护"><a href="#KeyFile保护" class="headerlink" title="KeyFile保护"></a>KeyFile保护</h1>付费后将作者提供的注册文件keyfile放到指定目录下可用让软件成为正版<br>软件每次启动时都会读取该文件，然后利用某种算法进行处理，以此判断结果是否正确  <h2 id="相关api函数"><a href="#相关api函数" class="headerlink" title="相关api函数"></a>相关api函数</h2>|api函数|作用|<br>-|-<br>FindFirstA|确定文件是否存在<br>CreateFileA、_lopen|确定文件是否存在；打开文件获得其句柄<br>GetFileSizeA、GetFileEx|获得文件的大小<br>GetFileSize、GetFileAttributesExA|获得文件的属性<br>SetFilePointer、GetFilePointerEx|移动文件指针<br>ReadFile|读取文件内容  </li>
 </ol>
-<p>-|-<br>FindFirstA|确定文件是否存在<br>CreateFileA、_lopen|确定文件是否存在；打开文件获得其句柄<br>GetFileSizeA、GetFileEx|获得文件的大小<br>GetFileSize、GetFileAttributesExA|获得文件的属性<br>SetFilePointer、GetFilePointerEx|移动文件指针<br>ReadFile|读取文件内容  </p>
 <h1 id="网络验证"><a href="#网络验证" class="headerlink" title="网络验证"></a>网络验证</h1><p>思路是拦截服务器返回的数据包，分析程序是如何处理数据包的   </p>
 <h2 id="相关函数-1"><a href="#相关函数-1" class="headerlink" title="相关函数"></a>相关函数</h2><p>常用的有send()、recv()【这两个是socket（套接字，计算机之间进行通信的一种约定或一种方式）函数】、WSASend()、WSARecv()等   </p>
 <h2 id="破解网络验证的一般思路"><a href="#破解网络验证的一般思路" class="headerlink" title="破解网络验证的一般思路"></a>破解网络验证的一般思路</h2><p>如果验证的数据包内容固定，可以抓取数据包，写一个本地服务端模拟服务器<br>如果不固定则需要找出相应的算法   </p>
@@ -284,7 +283,7 @@
 <li>相加的两个常数：<br>一个是<strong>利用第2步的原文</strong>，将其等分成16份（每份长度为32位），循环使用其中一份。<br>另一个是4^32*abs(sin(i))得到的整数部分,在第i步中，i用弧度表示。目的是用正弦函数和幂函数消除变换中的线性  </li>
 <li>循环左移位数s：有个表<br><img src="https://s1.ax1x.com/2020/04/12/GLmJmj.png" alt=" "></li>
 </ul>
-<ol start="5">
+<ol>
 <li>输出</li>
 </ol>
 <h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>用peid插件krypto analyzer分析，得知程序含有md5的迭代常数，可以猜测使用了md5算法<br>输入的注册码后进行长度等的判断以及数据初步处理：<br><img src="https://s1.ax1x.com/2020/04/12/GLmt7n.png" alt=""><br>上图call的地址里的代码，通过mov的4个数判断在进行md5初始化：<br><img src="https://s1.ax1x.com/2020/04/12/GLmY0s.png" alt="再根据后续出现的md5算法的正弦函数表（如D76AA478）中的元素可以判断为md5算法" title="再根据后续出现的md5算法的正弦函数表（如D76AA478）中的元素可以判断为md5算法">   </p>

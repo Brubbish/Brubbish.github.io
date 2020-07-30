@@ -261,16 +261,11 @@
 <h3 id="Signature字段"><a href="#Signature字段" class="headerlink" title="Signature字段"></a>Signature字段</h3><p>在一个有效的PE文件里，Signature字段被设置为0x00004550，对应ASCII字符为PE00<br>MS-DOS头部的e_lfanew正是指向这个字段</p>
 <h3 id="FileHeader字段"><a href="#FileHeader字段" class="headerlink" title="FileHeader字段"></a>FileHeader字段</h3><p>IMAGE_FILE_HEADER（映像头文件）结构包含PE文件的一些基本信息和这个结构的大小。<br>结构的各个字段包括：  </p>
 <ol>
-<li><p>Machine：可执行文件的目标cpu类型</p>
-</li>
-<li><p>NumberOfSection：区块的数目</p>
-</li>
-<li><p>TimeDateStamp：文件创建时间</p>
-</li>
-<li><p>PointerToSymbolTable：COFF符号表的文件偏移位置</p>
-</li>
-<li><p>NumberOfSymbols：如果有COFF符号表，它代表其中的符号数目，可以用来找到COFF符号表的结束处</p>
-</li>
+<li>Machine：可执行文件的目标cpu类型</li>
+<li>NumberOfSection：区块的数目</li>
+<li>TimeDateStamp：文件创建时间</li>
+<li>PointerToSymbolTable：COFF符号表的文件偏移位置</li>
+<li>NumberOfSymbols：如果有COFF符号表，它代表其中的符号数目，可以用来找到COFF符号表的结束处</li>
 <li><p>SizeOfOptionalHeader：表示数据的大小，依赖于文件是32位还是64位</p>
 </li>
 <li><p>Characteristics：文件属性，定义域winnt.h内的IMAGE_FILE_xxx值</p>
