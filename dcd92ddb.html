@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/unnamed.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/photo.gif">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="eaKNHevzJD712W6CICpiQ4_TgpzOgFr3dBKOwg7Hqs4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"brubbish.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false,"search":null,"path":"search.xml","field":"post","format":"html","limit":10000},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="32位软件逆向技术数据结构计算机存储、组织数据的方式。确定数据结构后，算法就很容易得到，有时候也根据特定算法来判断数据结构 局部变量局部变量分配空间时通常会使用栈和寄存器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020.03.16-2020.03.22">
+<meta property="og:url" content="https://brubbish.github.io/dcd92ddb.html">
+<meta property="og:site_name" content="Brubbish&#39;s">
+<meta property="og:description" content="32位软件逆向技术数据结构计算机存储、组织数据的方式。确定数据结构后，算法就很容易得到，有时候也根据特定算法来判断数据结构 局部变量局部变量分配空间时通常会使用栈和寄存器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/19/8ssrPP.md.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/21/8fFC6O.png">
+<meta property="article:published_time" content="2020-03-22T04:57:00.000Z">
+<meta property="article:modified_time" content="2020-07-05T13:30:46.000Z">
+<meta property="article:author" content="Bruce">
+<meta property="article:tag" content="周报">
+<meta property="article:tag" content="加密与解密">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/19/8ssrPP.md.png">
+
+<link rel="canonical" href="https://brubbish.github.io/dcd92ddb.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>2020.03.16-2020.03.22 | Brubbish's</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153514659-2"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-153514659-2');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Brubbish's" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Brubbish's</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://brubbish.github.io/dcd92ddb.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bruce">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Brubbish's">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2020.03.16-2020.03.22
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-22 12:57:00" itemprop="dateCreated datePublished" datetime="2020-03-22T12:57:00+08:00">2020-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-05 21:30:46" itemprop="dateModified" datetime="2020-07-05T21:30:46+08:00">2020-07-05</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="32位软件逆向技术"><a href="#32位软件逆向技术" class="headerlink" title="32位软件逆向技术"></a>32位软件逆向技术</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>计算机存储、组织数据的方式。确定数据结构后，算法就很容易得到，有时候也根据特定算法来判断数据结构</p>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量分配空间时通常会使用栈和寄存器<br><a id="more"></a></p>
+<h4 id="利用栈存放局部变量"><a href="#利用栈存放局部变量" class="headerlink" title="利用栈存放局部变量"></a>利用栈存放局部变量</h4><p>变量分配与清除的形式：</p>
+<ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sub esp,n</span><br><span class="line">...用[ebp-xxxx]寻址</span><br><span class="line">add esp,n</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add esp,-n</span><br><span class="line">...用[ebp+xxxx]寻址</span><br><span class="line">sub esp,-n</span><br></pre></td></tr></table></figure></li>
+<li>(省空间)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">push reg  ;(相当于sub esp，4)</span><br><span class="line">...用[ebp-xxxx]寻址</span><br><span class="line">pop reg</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>局部变量的起始值是随机的，是其他函数执行后留在栈中的垃圾数据，因此需要进行初始化，一种方法是通过mov指令，另一种是用push，如：”push 5”</p>
+<h4 id="利用寄存器存放局部变量"><a href="#利用寄存器存放局部变量" class="headerlink" title="利用寄存器存放局部变量"></a>利用寄存器存放局部变量</h4><p>除了栈占用2个寄存器，编译器会利用其他6个通用寄存器尽可能的存放局部变量，如果寄存器不够用会存到栈中</p>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全集变量通常位于.data区块的一个固定地址处，访问时一般会用一个固定的硬编码地址直接对内存进行寻址（←使用这种方式比较容易识别出这是一个全局变量。）<br>一般编译器会将<em>全局变量</em>放到<em>可读</em>写的区块里，如果放到<em>只读</em>区块里就是一个<em>常量</em>  </p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>访问一般时通过基址加变址寻址实现的（基址可以是常量也可以是寄存器）  </p>
+<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>虚函数是在程序运行时定义的函数。（c++）<br>虚函数的地址不能在编译时确定，只能在调用即将进行时确定。所有对虚函数的引用通常放在一个专用数组-虚函数表（virtual table）中，数组中的元素存放的就是类中数表的地址。</p>
+<blockquote>
+<p>虚函数 是在基类中使用关键字 virtual 声明的函数。在派生类中重新定义基类中定义的虚函数时，<em>会告诉编译器不要静态链接到该函数</em>。<br>基类：当创建一个类时，您不需要重新编写新的数据成员和成员函数，只需指定新建的类继承了一个已有的类的成员即可。这个已有的类称为基类，新建的类称为派生类。<br>继承：代表了 is a 关系。例如，哺乳动物是动物，狗是哺乳动物，因此，狗是动物，等等。(runoob.com)</p>
+</blockquote>
+<p>程序通过两次寻址得到虚函数的地址然后执行</p>
+<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><h3 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h3><p>通常为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmp a,b</span><br><span class="line">jz&#x2F;jnz(相当于je&#x2F;jne) xxxx</span><br></pre></td></tr></table></figure><br>整数用cmp指令比较，浮点值用fcom、fcomp等指令比较<br>许多情况下，编译器用test或or之类的较短的逻辑指令来替换cmp指令<br><img src="https://s1.ax1x.com/2020/03/19/8ssrPP.md.png" alt=" "></p>
+<h3 id="switch-case"><a href="#switch-case" class="headerlink" title="switch-case"></a>switch-case</h3><p>编译器会编译出一组由不同关系运算组成的语句</p>
+<p>如果编译时设置优化选项为“Maximize Speed”，编译器会用”dec eax”代替cmp指令。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">push ecx</span><br><span class="line">lea eax,[esp]</span><br><span class="line">push eax</span><br><span class="line">push 0040804c</span><br><span class="line">call 004010A1   ;scanf</span><br><span class="line">mov eax,[esp+8] ;将输入的值传给eax</span><br><span class="line">add esp,00000008</span><br><span class="line"></span><br><span class="line">dec dax         ;检查eax是否为1h</span><br><span class="line">je 00401055</span><br><span class="line">                ;zf记录相关指令执行后结果是否为0，如果为0那么ZF&#x3D;1，如果不为0那么ZF&#x3D;0</span><br><span class="line">                ;je:等于则转移(检测zf&#x3D;1) </span><br><span class="line"></span><br><span class="line">(同理也可使用sub eax,xxxxxx判断是否为其他值)</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<h3 id="转移指令机器码的计算"><a href="#转移指令机器码的计算" class="headerlink" title="转移指令机器码的计算"></a>转移指令机器码的计算</h3><p>短转移：无条件和有条件的<em>机器码均为2字节</em>，范围为-128~127（2^8）<br>长转移：无条件的机器码为<u>5字节</u>，条件转移为<u>6字节</u>。因为无条件用一个字节（jmp）表示转移类型；条件转移用2个字节（如je、jns），用其他四个字节表示偏移量<br>子程序调用指令：调用的参数不涉及寄存器、栈等值的类似于长转移；涉及的例如“call dword ptr [eax+2]”  比较复杂，不表（….）<br>条件转移指令的范围是16位遗留下的。<br>cpu开发人员只给目的地址分配了1字节（8位），将跳转的长度限制在225字节之内  </p>
+<p>无条件短转移的机器码形式为:”EBxx”。B00H~EB4F是向后转移，EB80~EBFFH是向前转移  </p>
+<p>转移指令的机器码形式为：<br>位移量=目的地址-起始地址-跳转指令本身长度<br>转移指令机器码=转移类别机器码(如前文中的EB）+位移量</p>
+<blockquote>
+<p><a href="https://brubbish.github.io/34199.html#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%84%8F%E4%B9%89">https://brubbish.github.io/34199.html#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%A7%BB%E8%BF%9B%E8%A1%8C%E8%BD%AC%E7%A7%BB%E7%9A%84%E6%84%8F%E4%B9%89</a>  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/03/21/8fFC6O.png" alt="jmp 401005对应机器码EB03"> </p>
+<h1 id="python爬虫学习"><a href="#python爬虫学习" class="headerlink" title="python爬虫学习"></a>python爬虫学习</h1><p>记录的有点乱，还没整理好<br>学习的原因是 看了某个论坛上一个学了几周爬虫 后用其爬的结果回答的答主 遂感牛逼，再加上有时候想学点别的作为调节（🤦‍）<br><a href="https://brubbish.github.io/710f8e5f.html">https://brubbish.github.io/710f8e5f.html</a> </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%91%A8%E6%8A%A5/" rel="tag"><i class="fa fa-tag"></i> 周报</a>
+              <a href="/tags/%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/" rel="tag"><i class="fa fa-tag"></i> 加密与解密</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/710f8e5f.html" rel="prev" title="python 爬虫学习">
+      <i class="fa fa-chevron-left"></i> python 爬虫学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/50551.html" rel="next" title="2020.03.23-2020.03.29">
+      2020.03.23-2020.03.29 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#32位软件逆向技术"><span class="nav-number">1.</span> <span class="nav-text">32位软件逆向技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">1.1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量"><span class="nav-number">1.1.1.</span> <span class="nav-text">局部变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用栈存放局部变量"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">利用栈存放局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用寄存器存放局部变量"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">利用寄存器存放局部变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量"><span class="nav-number">1.1.2.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">1.1.3.</span> <span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚函数"><span class="nav-number">1.2.</span> <span class="nav-text">虚函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制语句"><span class="nav-number">1.3.</span> <span class="nav-text">控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-else"><span class="nav-number">1.3.1.</span> <span class="nav-text">if-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-case"><span class="nav-number">1.3.2.</span> <span class="nav-text">switch-case</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转移指令机器码的计算"><span class="nav-number">1.3.3.</span> <span class="nav-text">转移指令机器码的计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python爬虫学习"><span class="nav-number">2.</span> <span class="nav-text">python爬虫学习</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bruce</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bruce</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
