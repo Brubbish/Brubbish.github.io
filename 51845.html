@@ -23,14 +23,15 @@
 
   <meta name="description" content="pwn-200写这题的时候有半个多月没有接触栈溢出了…算是拿这题复习一下 1234567pluto@pluto-virtual-machine:~&#x2F;Desktop$ checksec b[*] &#39;&#x2F;home&#x2F;pluto&#x2F;Desktop&#x2F;b&#39;    Arch:     i386-32-little    RELRO:    Partial RELRO    Stack:    No canary f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xctf栈溢出wp">
+<meta property="og:title" content="xctf栈溢出WP（1）">
 <meta property="og:url" content="https://brubbish.github.io/51845.html">
 <meta property="og:site_name" content="Brubbish&#39;s">
 <meta property="og:description" content="pwn-200写这题的时候有半个多月没有接触栈溢出了…算是拿这题复习一下 1234567pluto@pluto-virtual-machine:~&#x2F;Desktop$ checksec b[*] &#39;&#x2F;home&#x2F;pluto&#x2F;Desktop&#x2F;b&#39;    Arch:     i386-32-little    RELRO:    Partial RELRO    Stack:    No canary f">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-01T11:20:13.422Z">
-<meta property="article:modified_time" content="2020-12-01T06:17:12.079Z">
+<meta property="article:modified_time" content="2020-12-01T11:25:16.962Z">
 <meta property="article:author" content="Bruce">
+<meta property="article:tag" content="pwn">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://brubbish.github.io/51845.html">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>xctf栈溢出wp | Brubbish's</title>
+  <title>xctf栈溢出WP（1） | Brubbish's</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153514659-2"></script>
     <script>
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          xctf栈溢出wp
+          xctf栈溢出WP（1）
         </h1>
 
         <div class="post-meta">
@@ -218,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-12-01 19:20:13 / 修改时间：14:17:12" itemprop="dateCreated datePublished" datetime="2020-12-01T19:20:13+08:00">2020-12-01</time>
+              <time title="创建时间：2020-12-01 19:20:13 / 修改时间：19:25:16" itemprop="dateCreated datePublished" datetime="2020-12-01T19:20:13+08:00">2020-12-01</time>
             </span>
 
           
@@ -264,6 +265,10 @@
     
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/pwn/" rel="tag"><i class="fa fa-tag"></i> pwn</a>
+          </div>
 
         
 
@@ -271,12 +276,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/61126.html" rel="prev" title="xctf堆溢出wp">
-      <i class="fa fa-chevron-left"></i> xctf堆溢出wp
+    <a href="/61126.html" rel="prev" title="xctf堆溢出WP（1）">
+      <i class="fa fa-chevron-left"></i> xctf堆溢出WP（1）
     </a></div>
       <div class="post-nav-item">
-    <a href="/29281.html" rel="next" title="堆漏洞">
-      堆漏洞 <i class="fa fa-chevron-right"></i>
+    <a href="/29281.html" rel="next" title="ctfwiki堆漏洞整理">
+      ctfwiki堆漏洞整理 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -355,7 +360,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
