@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/24/tSSAEj.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/05/24/tSSwrD.png">
 <meta property="article:published_time" content="2020-05-25T07:00:30.000Z">
-<meta property="article:modified_time" content="2020-07-05T13:39:30.000Z">
+<meta property="article:modified_time" content="2021-03-15T04:31:17.503Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="加密与解密">
 <meta property="article:tag" content="CTF">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-05 21:39:30" itemprop="dateModified" datetime="2020-07-05T21:39:30+08:00">2020-07-05</time>
+                <time title="修改时间：2021-03-15 12:31:17" itemprop="dateModified" datetime="2021-03-15T12:31:17+08:00">2021-03-15</time>
               </span>
 
           
@@ -261,8 +261,10 @@
 <li>ASProtect</li>
 <li>Armadillo</li>
 <li>EXECryptor</li>
-<li>Themida<h1 id="虚拟机保护"><a href="#虚拟机保护" class="headerlink" title="虚拟机保护"></a>虚拟机保护</h1>许多解释性的语言，如java的jvm。这里讨论的虚拟机（与vmware不同）将一系列指令解释成字节码后放在一个解释引擎中执行，从而对软件进行保护。  <h2 id="虚拟机引擎"><a href="#虚拟机引擎" class="headerlink" title="虚拟机引擎"></a>虚拟机引擎</h2>一个虚拟机引擎由编译器、解释器和虚拟cpu组成，还会搭配一个或多个指令系统。虚拟机在运行时，现根据自定义的指令系统把已知的指令解释成字节码并放在pe文件中，然后将原始代码删除，改成直接进入虚拟机执行。<br>挑事者跟踪并进入虚拟机后很难理解原始指令。想要理解程序就必须对虚拟机引擎进行分析<br>虚拟机技术以效率换取安全，一条指令经过虚拟机处理，体积会膨胀几十几百倍。因此，VM保护通常经过sdk方式，只把较为重要的代码保护起来</li>
+<li>Themida</li>
 </ol>
+<h1 id="虚拟机保护"><a href="#虚拟机保护" class="headerlink" title="虚拟机保护"></a>虚拟机保护</h1><p>许多解释性的语言，如java的jvm。这里讨论的虚拟机（与vmware不同）将一系列指令解释成字节码后放在一个解释引擎中执行，从而对软件进行保护。  </p>
+<h2 id="虚拟机引擎"><a href="#虚拟机引擎" class="headerlink" title="虚拟机引擎"></a>虚拟机引擎</h2><p>一个虚拟机引擎由编译器、解释器和虚拟cpu组成，还会搭配一个或多个指令系统。虚拟机在运行时，现根据自定义的指令系统把已知的指令解释成字节码并放在pe文件中，然后将原始代码删除，改成直接进入虚拟机执行。<br>挑事者跟踪并进入虚拟机后很难理解原始指令。想要理解程序就必须对虚拟机引擎进行分析<br>虚拟机技术以效率换取安全，一条指令经过虚拟机处理，体积会膨胀几十几百倍。因此，VM保护通常经过sdk方式，只把较为重要的代码保护起来</p>
 <h1 id="c"><a href="#c" class="headerlink" title="c++"></a>c++</h1><h2 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h2><p>可以用scanf和printf，也可用c++中增加的输入输出库<br>如果要使用输入输出时，需要包含头文件：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br></pre></td></tr></table></figure><br>使用cin和count进行输入和输出<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;x;<span class="comment">//多输出：cin&gt;&gt;x&gt;&gt;y;</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"The int number is x= "</span>&lt;&lt;x&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//endl即end of line 表示结尾进行换行</span></span><br></pre></td></tr></table></figure><br>cin和count这两个运算符可以自行分析处理（强制转换）数据类型，因此无需像使用scanf和printf那样给出格式控制字符串。</p>
 <h2 id="new和delete"><a href="#new和delete" class="headerlink" title="new和delete"></a>new和delete</h2><p>用来动态分配内存和释放内存<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>;  <span class="comment">//分配1个int型的内存空间</span></span><br><span class="line"><span class="keyword">delete</span> p;  <span class="comment">//释放内存</span></span><br><span class="line"><span class="comment">//以及</span></span><br><span class="line"><span class="keyword">int</span> *p = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];  <span class="comment">//分配10个int型的内存空间</span></span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br></pre></td></tr></table></figure></p>
 <h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><p>类只是一种数据类型，本身并不占用空间</p>
@@ -394,7 +396,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -421,7 +423,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
